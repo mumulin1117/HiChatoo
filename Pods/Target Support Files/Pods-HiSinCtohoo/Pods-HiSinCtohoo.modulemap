@@ -1,0 +1,6 @@
+framework module Pods_HiSinCtohoo {
+  umbrella header "Pods-HiSinCtohoo-umbrella.h"
+
+  export *
+  module * { export * }
+}
