@@ -21,7 +21,15 @@ class StyleCuratorControler: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        shineLine.leftViewMode = .always
+        shineLine.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 60, height: 55))
+        shineLine.attributedPlaceholder = NSAttributedString(string: "Enter Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        lookBlend.attributedPlaceholder = NSAttributedString(string: "Enter Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        lookBlend.leftViewMode = .always
+        lookBlend.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 60, height: 55))
+    }
     @IBAction func designFocus(_ sender: UIButton) {
         let trendMuse = YepaCaauryoursontroller(designCurve: .styleAlchemy,visualEssence: true)
         

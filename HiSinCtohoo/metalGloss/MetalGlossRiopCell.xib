@@ -36,8 +36,8 @@
                         <color key="textColor" white="1" alpha="0.3090122767857143" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCU-bd-z72">
-                        <rect key="frame" x="391" y="59.333333333333336" width="31" height="14.333333333333336"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCU-bd-z72">
+                        <rect key="frame" x="422" y="66.666666666666671" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="0.30901227679999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -58,6 +58,12 @@
                 <constraint firstItem="GtJ-jI-pzG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="xFz-RN-RIb"/>
             </constraints>
             <size key="customSize" width="432" height="161"/>
+            <connections>
+                <outlet property="Ninme" destination="Ipf-tU-YKN" id="tca-cf-LvH"/>
+                <outlet property="addLeiok" destination="GtJ-jI-pzG" id="YDz-rf-1RE"/>
+                <outlet property="contetnterr" destination="8rH-9k-VNA" id="WCN-7E-g8a"/>
+                <outlet property="uptimer" destination="mCU-bd-z72" id="yCG-8E-Hxg"/>
+            </connections>
             <point key="canvasLocation" x="406.1068702290076" y="59.507042253521128"/>
         </collectionViewCell>
     </objects>

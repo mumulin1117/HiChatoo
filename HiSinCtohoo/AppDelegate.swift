@@ -22,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-   
-    
     private func formCraftOpiu()  {
-        guard WhoCareyours.lookSense != nil else {
+        guard WhoCareyours.lookSense == nil else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
            

@@ -52,6 +52,11 @@
                 <constraint firstItem="DfF-pZ-TqA" firstAttribute="top" secondItem="ufE-O7-SDe" secondAttribute="bottom" constant="15" id="yIQ-Jb-vZt"/>
             </constraints>
             <size key="customSize" width="205" height="145"/>
+            <connections>
+                <outlet property="Ninme" destination="ufE-O7-SDe" id="dWg-S6-b8s"/>
+                <outlet property="Sevendayi" destination="DfF-pZ-TqA" id="Ta3-rh-5xG"/>
+                <outlet property="addLeiok" destination="YRR-eA-zOc" id="gM5-d9-Gwq"/>
+            </connections>
             <point key="canvasLocation" x="231.29770992366412" y="53.87323943661972"/>
         </collectionViewCell>
     </objects>
