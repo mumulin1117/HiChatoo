@@ -8,15 +8,27 @@
 import UIKit
 
 class ExchangeJimoController: UITabBarController {
-    private var orianFre:CGRect = CGRect.zero
-    
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.tabBar.layer.cornerRadius = 15
-        self.tabBar.layer.masksToBounds = true
-        self.tabBar.frame = CGRect.init(x: 20, y:UIScreen.main.bounds.height - 80 - 30 , width: UIScreen.main.bounds.width - 40, height: 80)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+//        setupCustomTabBarInsets()
+    }
+    
+}
+extension UITabBarController {
+    func setupCustomTabBarInsets() {
+        
+        // 移除默认约束
+        self.tabBar.removeConstraints(self.tabBar.constraints)
+        
+        // 添加自定义约束
+        self.tabBar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.tabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            self.tabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            self.tabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
+            self.tabBar.heightAnchor.constraint(equalToConstant: 60)
+        ])
     }
 }
-
-
