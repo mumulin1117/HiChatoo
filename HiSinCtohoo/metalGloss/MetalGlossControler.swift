@@ -37,7 +37,7 @@ class MetalGlossControler: UIViewController {
         SVProgressHUD.show()
         WhoCareyours.trendCurve(artMotion: "/xtvnbevhzsaaz/mbutenbmfnt", craftDetail: ["piercingArt":WhoCareyours.visualMood]) { artTouch in
             guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap["data"] as? Array<[String: Any]>
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("dvaktva")] as? Array<[String: Any]>
             else {
                
                 
@@ -53,7 +53,7 @@ class MetalGlossControler: UIViewController {
         //message
         WhoCareyours.trendCurve(artMotion: "/bovnrisz/lswstnetel", craftDetail: ["trendVibe":WhoCareyours.visualMood]) { artTouch in
             guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap["data"] as? Array<[String: Any]>
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("dvaktva")] as? Array<[String: Any]>
             else {
                
                 //

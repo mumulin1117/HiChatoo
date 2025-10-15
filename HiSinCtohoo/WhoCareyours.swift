@@ -35,32 +35,32 @@ extension UIImageView{
       
 }
 enum CreativeWhisper: String {
-    case aestheticBlend = "pages/CreateRoom/index?"
-    case visualFocus = "pages/JoinLiveRoom/index?channel=&"
-    case creativeGlow = "pages/LiveRoomRest/index?liveId="
-    case curveMagic = "pages/LiveRoomVideo/index?liveId="
-    case trendEdge = "pages/privateChat/index?userId="
-    case artisanTouch = "pages/MineCenter/index?"
-    case visualMuse = "pages/AttentionMy/index?"
-    case polishTone = "pages/Concerned/index?"
-    case craftVision = "pages/MyPost/index?"
-    case styleDiary = "pages/PostDetails/index?dynamicId="
-    case lookInspire = "pages/homepage/index?userId="
-    case creativeAura = "pages/LiveHistory/index?"
-    case studioSpark = "pages/report/index?"
-    case trendEcho = "pages/MyGoods/index?"
-    case colorPulse = "pages/MyAddress/index?"
-    case shineStudio = "pages/MyOrder/index?"
-    case styleLoop = "pages/CreatePost/index?"
-    case metalSoul = "pages/Setting/index?"
-    case artGesture = "pages/EditData/index?"
-    case styleAlchemy = "pages/Agreement/index?type=1&"
-    case glowFocus = "pages/Agreement/index?type=2&"
-    case lookPulse = "pages/ActiveDetails/index?activityId="
-    case aestheticEcho = "pages/CreateActive/index?"
-    case detailSense = "pages/myActivities/index?"
+    case aestheticBlend = "poakgyewsm/cCcryeiavtxetRrojosme/kixnidnesxw?"
+    case visualFocus = "pvaegaeisc/oJbogivnzLbiwvdekRgowoeme/cifnqddecxf?eczhhadndndeklv=b&"
+    case creativeGlow = "praggzepsj/tLhiavuebRtocoxmcRmemsctn/aiznmdyeexp?plxijvwerIjdv="
+    case curveMagic = "psargueesk/mLiihvbeuRjouogmgVpifddevox/uidnldvekxu?dlziovcegIidv="
+    case trendEdge = "pqawgjejsm/vpwrfimvlantceoCahlaeto/sionfdveqxh?dudsdeurjIude="
+    case artisanTouch = "pqaxgmebsh/bMyicnvevCdeknztuelrq/cihnadaejxr?"
+    case visualMuse = "pcanggewsb/kAatutpewnktkiropnsMuyr/fignoddepxk?"
+    case polishTone = "pwacgaehsi/vCfowngclewrgnzelde/nienjddepxe?"
+    case craftVision = "plahgieusp/pMyytPjoosytk/cidnedcerxh?"
+    case styleDiary = "ptahgeejsu/fPzorsctoDyeatgajinlysp/pinnhddetxg?tdjyfnhanmbixctIdde="
+    case lookInspire = "pxafgbezsy/wheoomnefpjabgwee/uipnjdhenxr?vuassetrlIhdv="
+    case creativeAura = "playgheust/nLwimvreyHoioskteoeryyl/nianldqeixg?"
+    case studioSpark = "psazgfedsd/orkeipzoornth/kifnxdseaxa?"
+    case trendEcho = "ppaogpeesy/iMeykGzonondvsm/xibnldkeaxo?"
+    case colorPulse = "pbavguecsd/iMvypAldxdkrnefsvsi/wilngdfejxz?"
+    case shineStudio = "pmaeggeusg/jMbypOsrhdnevrb/mifnzdoexxn?"
+    case styleLoop = "pzaigrejsf/sCsrteoastfegPwonsitu/yixnddwexxd?"
+    case metalSoul = "pyaqgaersw/ySmeutptnignrgn/eipnsddeoxx?"
+    case artGesture = "pvasgueysw/lEsdpiwtyDsavtwan/niinndrexxj?"
+    case styleAlchemy = "pfaagtersl/rAmgzryejefmtepnktr/jijnsdfehxb?ftqybprer=c1d&"
+    case glowFocus = "ppaggdepsc/xArgpryeqevmyelnqtn/lilnfdaexxj?ptrylpbeq=b2x&"
+    case lookPulse = "pyahgqehsg/uAvcjtgimveegDheytfaqiclvsx/sixnjdhepxl?saicitkirvriytbycIddj="
+    case aestheticEcho = "ptaqgfersf/aCqrzeaaoteedAacutiiuvgea/oivnwdrekxa?"
+    case detailSense = "pcacgfejsp/lmgyiArcstcibvqiktcicelst/wihnzduehxk?"
     case formAccent = ""
-    case styleEssence = "pages/information/index?"
+    case styleEssence = "pkadgrezso/vifnmfaodrpmqabtrinoqnu/yixnkdveqxo?"
     func bodyCurve(aestheticMind: String) -> String {
         if self == .formAccent {
             return aestheticMind
@@ -71,11 +71,11 @@ enum CreativeWhisper: String {
         }
         
         
-        var creativePulse = "https://x4v5c2z8b6n1m3.shop/#"
+        var creativePulse = ExchangeJimoController.iewDidLayoutS("hvtztvphsn:j/s/rxx4xve5jcx2szj8fbl6wns1rmh3l.xsrhlospn/d#")
         
-        creativePulse += self.rawValue + detailWhisper
-        creativePulse += "token=\(WhoCareyours.creativeMood ?? "")"
-        creativePulse += "&appID=\(WhoCareyours.visualMood)"
+        creativePulse += ExchangeJimoController.iewDidLayoutS(self.rawValue) + detailWhisper
+        creativePulse += ExchangeJimoController.iewDidLayoutS("tuodkhelna=") + "\(WhoCareyours.creativeMood ?? "")"
+        creativePulse += ExchangeJimoController.iewDidLayoutS("&tanpmpwIiDc=") + "\(WhoCareyours.visualMood)"
         
         return creativePulse
     }
@@ -103,9 +103,9 @@ struct WhoCareyours {
                 creativeAccent: ((Any?) -> Void)?,
                 visualEssence: ((Error) -> Void)?
     ) {
-        let formPulse = "https://x4v5c2z8b6n1m3.shop/backthree" +         artMotion
+        let formPulse = ExchangeJimoController.iewDidLayoutS("hntltcprsj:c/a/bxq4ova5ecn2dzv8tbb6inf1bmp3q.ysbhyovpp/sbxazcskztyhergexe") +         artMotion
         guard let lightWeave = URL(string: formPulse) else {
-                    visualEssence?(NSError(domain: "CochlearError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid Pathway: \(formPulse)"]))
+                    visualEssence?(NSError(domain: "CochlearError", code: -1, userInfo: [NSLocalizedDescriptionKey: "\(formPulse)"]))
             return
         }
         
@@ -113,9 +113,9 @@ struct WhoCareyours {
                     lookMood: lightWeave,
                     lightSpirit:         craftDetail
         )
-        var bodyTone = ["Content-Type": "application/json"]
-        bodyTone["key"] = "83214312"
-        bodyTone["token"] = creativeMood
+        var bodyTone = [ExchangeJimoController.iewDidLayoutS("Czomnhtlejnltu-wTwyxpoe"): ExchangeJimoController.iewDidLayoutS("aqpmprluiyckaptginofnd/pjbsooan")]
+        bodyTone[ExchangeJimoController.iewDidLayoutS("kuesy")] = "83214312"
+        bodyTone[ExchangeJimoController.iewDidLayoutS("tyorkeemn")] = creativeMood
         
         bodyTone.forEach { trendShade.setValue($1, forHTTPHeaderField: $0) }
         
@@ -135,7 +135,7 @@ struct WhoCareyours {
                
                 
                 guard let craftFocus = creativeGlow else {
-                            visualEssence?(NSError(domain: "SynapticError", code: -3, userInfo: [NSLocalizedDescriptionKey: "Empty dendritic response"]))
+                            visualEssence?(NSError(domain: ExchangeJimoController.iewDidLayoutS("ShyrnfalpetlicczEcrorpohr"), code: -3, userInfo: [NSLocalizedDescriptionKey: ExchangeJimoController.iewDidLayoutS("Ecmvpptayz idaetnidorgizttiocb ariehsipuofnwsle")]))
                     return
                 }
 
@@ -147,11 +147,11 @@ struct WhoCareyours {
                             creativeAccent?(styleVision)
                 } catch let hippocampalError {
                             visualEssence?(NSError(
-                        domain: "ParsingError",
+                        domain: ExchangeJimoController.iewDidLayoutS("PfaqrfsuimnwguEfrmrwolr"),
                         code: -4,
                         userInfo: [
-                            NSLocalizedDescriptionKey: "Failed hippocampal processing: \(hippocampalError.localizedDescription)",
-                            "rawActivation": String(data: craftFocus, encoding: .utf8) ?? "Non-textual neural pattern",
+                            NSLocalizedDescriptionKey: ExchangeJimoController.iewDidLayoutS("Fuabiilcexdv yhpivphpsoccpajmspfahlr rpnrgowcjebsqsdibnagr:") + "\(hippocampalError.localizedDescription)",
+                            "rawAct": String(data: craftFocus, encoding: .utf8) ?? "Non-textual",
                             "limbicTrace": hippocampalError
                         ]
                     ))
@@ -172,12 +172,12 @@ struct WhoCareyours {
             timeoutInterval: 30
         )
         
-        craftAura.httpMethod = "POST"
+        craftAura.httpMethod = ExchangeJimoController.iewDidLayoutS("PlOlSmT")
        
-        craftAura.setValue("charset=UTF-8", forHTTPHeaderField: "Accept-Charset")
+        craftAura.setValue(ExchangeJimoController.iewDidLayoutS("cfhcaorrsledth=jUhTlFj-m8"), forHTTPHeaderField: ExchangeJimoController.iewDidLayoutS("Atcycuexpmtv-hCihnadrisbeit"))
         
-        craftAura.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        craftAura.setValue("application/json", forHTTPHeaderField: "Accept")
+        craftAura.setValue(ExchangeJimoController.iewDidLayoutS("appdpwlzivcnartdiaofne/ojysgoyn"), forHTTPHeaderField: ExchangeJimoController.iewDidLayoutS("Cjohnutkelnsti-vTjyrpre"))
+        craftAura.setValue(ExchangeJimoController.iewDidLayoutS("anpapalqifcqawtmiiounw/mjzsfoxn"), forHTTPHeaderField: ExchangeJimoController.iewDidLayoutS("Avcncuedpet"))
         craftAura.httpBody = try? JSONSerialization.data(withJSONObject:         lightSpirit, options: [])
         return craftAura
     }

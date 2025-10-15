@@ -25,8 +25,8 @@ class StyleCuratorControler: UIViewController {
         super.viewDidLoad()
         shineLine.leftViewMode = .always
         shineLine.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 60, height: 55))
-        shineLine.attributedPlaceholder = NSAttributedString(string: "Enter Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        lookBlend.attributedPlaceholder = NSAttributedString(string: "Enter Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        shineLine.attributedPlaceholder = NSAttributedString(string: ExchangeJimoController.iewDidLayoutS("Eznetpemri aEnmaawiil"), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        lookBlend.attributedPlaceholder = NSAttributedString(string: ExchangeJimoController.iewDidLayoutS("Eindtpeurp yPkajsdsjwcoerrd"), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         lookBlend.leftViewMode = .always
         lookBlend.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 60, height: 55))
     }
@@ -47,7 +47,7 @@ class StyleCuratorControler: UIViewController {
     
     @IBAction func styleWeave(_ sender: UIButton) {
         if craftStory.isSelected == false{
-            SVProgressHUD.showInfo(withStatus: "Please read and agree to our privacy policy and user terms first")
+            SVProgressHUD.showInfo(withStatus: ExchangeJimoController.iewDidLayoutS("Pdlbekahsced orqelapdg casngdz dabgarweiez mtkoo eobunrx lpdrsihvcakczye cpcoiloitcnyv qamnjdp puhskeyrv wtjeuromlsr ifpiprnswt"))
             return
         }
         
@@ -55,7 +55,7 @@ class StyleCuratorControler: UIViewController {
               !formEdge.isEmpty ,
         let trendAccent = lookBlend.text?.trimmingCharacters(in: .whitespaces),
               !trendAccent.isEmpty else {
-                  SVProgressHUD.showInfo(withStatus: "Email and password cannot be empty")
+                  SVProgressHUD.showInfo(withStatus: ExchangeJimoController.iewDidLayoutS("Eomuarislv oaznudg ppiarslsoweofrrdm qccavnrncomti bbtec ueomxpktay"))
             return
         }
         
@@ -75,9 +75,9 @@ class StyleCuratorControler: UIViewController {
                 
                 
                 guard let trendWeave = response as? [String: Any],
-                      let craftAura = trendWeave["data"] as? [String: Any]
+                      let craftAura = trendWeave[ExchangeJimoController.iewDidLayoutS("deactwa")] as? [String: Any]
                 else {
-                    SVProgressHUD.showInfo(withStatus: "Account or password error")
+                    SVProgressHUD.showInfo(withStatus: ExchangeJimoController.iewDidLayoutS("Alcwcnomupnitl uofru upgazsgsvwsoorkdt zevrxrnoer"))
                     
                     return
                 }
@@ -86,7 +86,7 @@ class StyleCuratorControler: UIViewController {
                 WhoCareyours.lookSense = craftAura["lookSense"] as? Int
                 
                        
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let storyboard = UIStoryboard(name: ExchangeJimoController.iewDidLayoutS("Mxacifn"), bundle: nil)
 
                        
                         if let viewController = storyboard.instantiateViewController(withIdentifier: "BahcuiNabiCONtrool") as? UINavigationController {
@@ -101,7 +101,7 @@ class StyleCuratorControler: UIViewController {
                     visualEssence: { [weak self] error in
                
            
-                SVProgressHUD.showError(withStatus: "log in failed!")
+                SVProgressHUD.showError(withStatus: ExchangeJimoController.iewDidLayoutS("lrovgh iifnn efsapislreadv!"))
             }
         )
     }

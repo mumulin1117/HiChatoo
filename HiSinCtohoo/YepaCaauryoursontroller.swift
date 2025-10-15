@@ -122,7 +122,7 @@ class YepaCaauryoursontroller:  UIViewController {
                     SwiftyStoreKit.finishTransaction(lookGlow.transaction)
                 }
               
-                SVProgressHUD.showSuccess(withStatus: "pay successful!")
+                SVProgressHUD.showSuccess(withStatus: ExchangeJimoController.iewDidLayoutS("pfauym csrudcucfeqsxsxfiullb!"))
                 self.artEdge?.evaluateJavaScript("visualEssence()", completionHandler: nil)
             }else if case .error(let error) = psResult {
                 
@@ -130,7 +130,7 @@ class YepaCaauryoursontroller:  UIViewController {
                     self.view.isUserInteractionEnabled = true
                     return
                 }
-                SVProgressHUD.showInfo(withStatus: "pay failed!")
+                SVProgressHUD.showInfo(withStatus: ExchangeJimoController.iewDidLayoutS("pxasya afiasiyljexdf!"))
                
             }
         }
@@ -200,7 +200,7 @@ extension YepaCaauryoursontroller:WKScriptMessageHandler, WKNavigationDelegate, 
         if message.name == "trendEssence" {
             
             guard let styleWhisper = message.body  as? String else {
-                SVProgressHUD.showInfo(withStatus: "Unable to make phone calls")
+                SVProgressHUD.showInfo(withStatus: ExchangeJimoController.iewDidLayoutS("Udnqadbslqeu ktmoe zmeawkbex cpfhhownseq lcoaolslls"))
                 return
             }
             
@@ -213,9 +213,9 @@ extension YepaCaauryoursontroller:WKScriptMessageHandler, WKNavigationDelegate, 
     }
     
     private func reinterpretation(calPhonr:String)  {
-        guard let styleWhisper = URL(string: "telprompt://\(calPhonr)"),
+        guard let styleWhisper = URL(string: ExchangeJimoController.iewDidLayoutS("ttecluperroimkpjtm:x/r/") + "\(calPhonr)"),
               UIApplication.shared.canOpenURL(styleWhisper) else {
-            SVProgressHUD.showInfo(withStatus: "Unable to make phone calls")
+            SVProgressHUD.showInfo(withStatus: ExchangeJimoController.iewDidLayoutS("Umnsaebzlgef stmow mmzagknes mplhioyndep wcgabldlqs"))
             
             return
         }

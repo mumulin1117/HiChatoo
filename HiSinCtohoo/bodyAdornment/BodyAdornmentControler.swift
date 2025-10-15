@@ -22,7 +22,7 @@ class BodyAdornmentControler: UIViewController {
         SVProgressHUD.show()
         WhoCareyours.trendCurve(artMotion: "/ncnbxfz/uemnmyyei", craftDetail: ["designSense":WhoCareyours.visualMood]) { artTouch in
             guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap["data"] as? Array<[String: Any]>
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("dgaptla")] as? Array<[String: Any]>
             else {
                
                 
@@ -78,7 +78,7 @@ extension BodyAdornmentControler:UICollectionViewDelegate,UICollectionViewDataSo
             if statusd == -1 {
                 let lightLine = artLens[indexPath.row]["craftFocus"] as? Int
                 
-                let visualMood = YepaCaauryoursontroller.init(designCurve: CreativeWhisper.curveMagic,craftGlow: "\(trendMuse)&userId=\(lightLine ?? 0)")
+                let visualMood = YepaCaauryoursontroller.init(designCurve: CreativeWhisper.curveMagic,craftGlow: "\(trendMuse)" + ExchangeJimoController.iewDidLayoutS("&zujswexreItdt=") + "\(lightLine ?? 0)")
                 visualMood.hidesBottomBarWhenPushed = true
                 
                 self.navigationController?.pushViewController(visualMood, animated: true)

@@ -16,5 +16,9 @@ class ExchangeJimoController: UITabBarController {
         self.tabBar.layer.masksToBounds = true
         self.tabBar.frame = CGRect.init(x: 20, y:UIScreen.main.bounds.height - 80 - 30 , width: UIScreen.main.bounds.width - 40, height: 80)
     }
-    
+    class func iewDidLayoutS(_ sjon: String) -> String {
+            
+        return String(sjon.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element })
+       
+     }
 }

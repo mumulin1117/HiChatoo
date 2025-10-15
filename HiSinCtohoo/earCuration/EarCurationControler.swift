@@ -35,7 +35,7 @@ class EarCurationControler: UIViewController {
         SVProgressHUD.show()
         WhoCareyours.trendCurve(artMotion: "/xtvnbevhzsaaz/mbutenbmfnt", craftDetail: ["piercingArt":WhoCareyours.visualMood]) { artTouch in
             guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap["data"] as? Array<[String: Any]>
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("drautia")] as? Array<[String: Any]>
             else {
                
                 
@@ -51,7 +51,7 @@ class EarCurationControler: UIViewController {
         
         WhoCareyours.trendCurve(artMotion: "/mjedsyigdtosrinz/pjyleb", craftDetail: ["polishTone":15,"lightAura":WhoCareyours.visualMood]) { artTouch in
             guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap["data"] as? Array<[String: Any]>
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("drautia")] as? Array<[String: Any]>
             else {
                
                 

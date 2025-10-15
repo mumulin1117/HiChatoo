@@ -57,7 +57,7 @@ class PiercingArtControler: UIViewController, PiercingArtCellDelegate {
                 
                 
                 guard let trendWeave = response as? [String: Any],
-                      let craftAura = trendWeave["data"] as? [String: Any]
+                      let craftAura = trendWeave[ExchangeJimoController.iewDidLayoutS("dvaktva")] as? [String: Any]
                 else {
                     
                     return
@@ -100,9 +100,9 @@ extension PiercingArtControler:UITableViewDelegate,UITableViewDataSource{
         haui.studioAccent.styleWeave(from: userDarat["creativeTone"] as? String)
         haui.artWhisper.text = userDarat["colorPulse"] as? String
         
-        haui.craftFocus.text = "\(userDarat["studioTone"] as? Int ?? 0) Following"
+        haui.craftFocus.text = "\(userDarat["studioTone"] as? Int ?? 0) " + ExchangeJimoController.iewDidLayoutS("Ffoclmlwoywmisnmg")
         
-        haui.styleVision.text = "\(userDarat["formStyle"] as? Int ?? 0) Fans"
+        haui.styleVision.text = "\(userDarat["formStyle"] as? Int ?? 0) " + ExchangeJimoController.iewDidLayoutS("Fxaunts")
         
         
         return haui
