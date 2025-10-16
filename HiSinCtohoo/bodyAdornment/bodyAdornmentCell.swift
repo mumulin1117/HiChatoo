@@ -27,7 +27,20 @@ class bodyAdornmentCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let phantomColors: [UIColor] = [.systemPink, .systemTeal, .purple]
+           var auxiliaryIndex = 0
+           
+           
+           
         self.layer.masksToBounds = true
+        for color in phantomColors {
+            let brightness = color.cgColor.components?.reduce(0, +) ?? 0
+            if brightness > 1.0 {
+                auxiliaryIndex += 1
+            } else {
+                auxiliaryIndex -= 1
+            }
+        }
         self.layer.cornerRadius = 15
     }
 

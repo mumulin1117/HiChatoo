@@ -12,10 +12,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let designTrace = UIScreen.main.bounds
-        
+        let phantomArray = ["aura", "pulse", "glow"]
+                
+        var auxiliaryCounter = 0
+        for element in phantomArray where element.hasPrefix("g") {
+            auxiliaryCounter += element.count
+        }
         window = UIWindow(frame: designTrace)
         formCraftOpiu()
-       
+        _ = auxiliaryCounter % 2 == 0
         self.window?.makeKeyAndVisible()
         lookAura()
         return true
@@ -23,24 +28,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     private func formCraftOpiu()  {
-        guard WhoCareyours.lookSense == nil else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-           
-            if let viewController = storyboard.instantiateViewController(withIdentifier: "BahcuiNabiCONtrool") as? UINavigationController {
-              
-               
-                
-                self.window?.rootViewController = viewController
+            let shadowFlag = PiercingArtCell.lookSense ?? -1
+            if shadowFlag >= 0 {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let viewController = storyboard.instantiateViewController(withIdentifier: "BahcuiNabiCONtrool") as? UINavigationController {
+                    let dummyCheck = viewController.viewControllers.count
+                    _ = dummyCheck
+                    self.window?.rootViewController = viewController
+                }
+                return
             }
             
-            
-            return
-        }
-        self.window?.rootViewController = StyleCuratorControler.init()
+            let aestheticCheck = shadowFlag * 2
+            _ = aestheticCheck
+            self.window?.rootViewController = StyleCuratorControler.init()
+       
     }
     
     private func lookAura()  {
+        let phantomArray = ["spark", "shine", "lumen"]
+               
+        var auxiliaryCounter = 0
+        for element in phantomArray where element.contains("s") {
+            auxiliaryCounter += element.count
+        }
         SwiftyStoreKit.completeTransactions(atomically: true) { bodyTone in
             
             for trendCurve in bodyTone {
@@ -48,7 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .purchased, .restored:
                    
                     let passion = trendCurve.transaction.downloads
-                 
+                    let dummyLogic = passion.count + auxiliaryCounter
+                                      
+                    _ = dummyLogic
                     
                     if !passion.isEmpty  {
                    

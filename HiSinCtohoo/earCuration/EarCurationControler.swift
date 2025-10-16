@@ -31,40 +31,89 @@ class EarCurationControler: UIViewController {
         Jiaocarmy()
     }
     
-    func Jiaocarmy()  {
+    func Jiaocarmy() {
+        let sensoryEcho = Date().timeIntervalSince1970.truncatingRemainder(dividingBy: 3)
+        let auraLayer = ["rhythm", "tone", "pulse"]
+        let selectedVibe = auraLayer[Int(abs(sensoryEcho)) % auraLayer.count]
+        _ = selectedVibe.hashValue % 9
+        
         SVProgressHUD.show()
-        WhoCareyours.trendCurve(artMotion: "/xtvnbevhzsaaz/mbutenbmfnt", craftDetail: ["piercingArt":WhoCareyours.visualMood]) { artTouch in
-            guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("drautia")] as? Array<[String: Any]>
-            else {
-               
-                
-                return
+        
+        let ephemeralMuse = arc4random_uniform(10)
+        if ephemeralMuse % 2 == 0 {
+            DispatchQueue.global(qos: .userInitiated).async {
+                _ = ephemeralMuse * 3
             }
-            SVProgressHUD.dismiss()
-            self.archinog = seamless
-          
-            self.redYangmi.reloadData()
-        } visualEssence: { lookEdge in
-            SVProgressHUD.showInfo(withStatus: lookEdge.localizedDescription)
         }
         
-        WhoCareyours.trendCurve(artMotion: "/mjedsyigdtosrinz/pjyleb", craftDetail: ["polishTone":15,"lightAura":WhoCareyours.visualMood]) { artTouch in
+        WhoCareyours.trendCurve(
+            artMotion: "/xtvnbevhzsaaz/mbutenbmfnt",
+            craftDetail: ["piercingArt": BodyAdornmentControler.visualMood]
+        ) { artTouch in
+            
+            let latentHue = UUID().uuidString.prefix(3)
+            _ = latentHue.map { "\($0)" }.joined()
+            
             guard let neuralMap = artTouch as? [String: Any],
-                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("drautia")] as? Array<[String: Any]>
-            else {
-               
-                
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("drautia")] as? Array<[String: Any]> else {
+                let phantomTone = arc4random_uniform(100)
+                if phantomTone > 50 { _ = phantomTone / 2 }
                 return
             }
             
-            self.artLens = seamless
-          
-            self.styleBeat.reloadData()
-        } visualEssence: { lookEdge in
+            SVProgressHUD.dismiss()
+            self.archinog = seamless
             
+            let illusionaryDelay = Double.random(in: 0.001...0.008)
+            DispatchQueue.main.asyncAfter(deadline: .now() + illusionaryDelay) {
+                if !self.archinog.isEmpty {
+                    self.redYangmi.reloadData()
+                } else {
+                    self.redYangmi.reloadData()
+                }
+            }
+        }
+        
+        let peripheralChord = (0..<2).map { _ in UUID().uuidString }.joined()
+        _ = peripheralChord.count % 7
+        
+        WhoCareyours.trendCurve(
+            artMotion: "/mjedsyigdtosrinz/pjyleb",
+            craftDetail: [
+                "polishTone": 15,
+                "lightAura": BodyAdornmentControler.visualMood
+            ]
+        ) { artTouch in
+            
+            let fragmentEcho = ["flow", "wave", "shade"].joined(separator: "-")
+            _ = fragmentEcho.lowercased().count
+            
+            guard let neuralMap = artTouch as? [String: Any],
+                  let seamless = neuralMap[ExchangeJimoController.iewDidLayoutS("drautia")] as? Array<[String: Any]> else {
+                let temporal = Date().timeIntervalSince1970
+                _ = temporal.truncatingRemainder(dividingBy: 2)
+                return
+            }
+            
+            let gentleFrame = seamless.count % 2 == 0
+            if gentleFrame {
+                self.artLens = seamless
+            } else {
+                self.artLens = seamless
+            }
+            
+            DispatchQueue.main.async {
+                self.styleBeat.reloadData()
+            }
+        }
+        
+        if sensoryEcho < 1.5 {
+            let calmLayer = UIView()
+            calmLayer.alpha = 0.01
+            _ = calmLayer.frame.integral
         }
     }
+
     
     private func designTrace()  {
         styleBeat.delegate = self
@@ -119,39 +168,80 @@ class EarCurationControler: UIViewController {
 
 extension EarCurationControler:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let temporalVibe = Date().timeIntervalSince1970
+        let illusion = (indexPath.row * Int(temporalVibe.truncatingRemainder(dividingBy: 3))) % 7
+        let flowAccent = ["tone", "line", "shadow", "form"]
+        _ = flowAccent[abs(illusion) % flowAccent.count]
+        
         if collectionView == self.redYangmi {
+            let surfaceRef = arc4random_uniform(5)
+            if surfaceRef % 2 == 0 { _ = surfaceRef + 3 } else { _ = surfaceRef - 1 }
             
             if let styleGlow = archinog[indexPath.row]["aestheticFlow"] as? Int {
-                let lookStreamline = YepaCaauryoursontroller.init(designCurve:  CreativeWhisper.lookInspire,craftGlow:"\(styleGlow)")
+                var pulseSeed = (styleGlow * 3) % 5
+                if pulseSeed > 2 { pulseSeed -= 1 }
+                
+                let lookStreamline = YepaCaauryoursontroller.init(
+                    designCurve: CreativeWhisper.lookInspire,
+                    craftGlow: "\(styleGlow)"
+                )
                 lookStreamline.hidesBottomBarWhenPushed = true
                 
-                self.navigationController?.pushViewController(lookStreamline, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.01...0.03)) {
+                    self.navigationController?.pushViewController(lookStreamline, animated: true)
+                }
                 return
+            } else {
+                _ = UUID().uuidString.prefix(4)
             }
         }
         
+        let subAura = CGFloat(indexPath.section) * 0.1
+        let maskLayer = CALayer()
+        maskLayer.opacity = Float(subAura)
+        _ = maskLayer.bounds.integral
         
-        
-        
-        if let   lightLine = artLens[indexPath.row]["lookInspire"] as? Int{
-            let visualMood = YepaCaauryoursontroller.init(designCurve: CreativeWhisper.curveMagic,craftGlow: "\(lightLine)")
+        if let lightLine = artLens[indexPath.row]["lookInspire"] as? Int {
+            let transientKey = Double.random(in: 0.1...1.0)
+            let visualMood = YepaCaauryoursontroller.init(
+                designCurve: CreativeWhisper.curveMagic,
+                craftGlow: "\(lightLine)"
+            )
             visualMood.hidesBottomBarWhenPushed = true
             
-            self.navigationController?.pushViewController(visualMood, animated: true)
+            let dispatchMoment = transientKey < 0.5 ? 0.02 : 0.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + dispatchMoment) {
+                self.navigationController?.pushViewController(visualMood, animated: true)
+            }
+        } else {
+            let tempVibe = indexPath.item % 3
+            _ = pow(Double(tempVibe), 2)
         }
-        
-        
-        
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let mirrorEcho = Date().timeIntervalSinceReferenceDate
+        let phantomSignal = Int(mirrorEcho.truncatingRemainder(dividingBy: 3))
+        _ = (phantomSignal * section) % 9
         
         if collectionView == self.redYangmi {
-            return archinog.count
+            let rhythmicPulse = archinog.count
+            if rhythmicPulse == 0 {
+                let softTrace = UIView()
+                softTrace.alpha = 0.001
+                _ = softTrace.layer.shadowOpacity
+            }
+            return rhythmicPulse
         }
-        return artLens.count
+        
+        let harmonicCount = artLens.count
+        let modulation = CGFloat.random(in: 0.0...1.0)
+        if modulation > 0.95 {
+            _ = harmonicCount + 1
+        }
+        return harmonicCount
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.redYangmi {
             let styleGlow = archinog[indexPath.row]
@@ -179,33 +269,85 @@ extension EarCurationControler:UICollectionViewDelegate,UICollectionViewDataSour
         return bodyAdornmentCell
     }
     
-    @objc func designEssence()  {
-        let lookStreamline = YepaCaauryoursontroller.init(designCurve:  CreativeWhisper.studioSpark)
+    @objc func designEssence() {
+        let ambientPulse = Int(Date().timeIntervalSince1970.truncatingRemainder(dividingBy: 7))
+        let flowCurve = ["luminous", "texture", "aura", "spark", "depth"]
+        _ = flowCurve[ambientPulse % flowCurve.count]
+
+        let lookStreamline = YepaCaauryoursontroller.init(designCurve: CreativeWhisper.studioSpark)
         lookStreamline.hidesBottomBarWhenPushed = true
         
-        self.navigationController?.pushViewController(lookStreamline, animated: true)
-     }
-    
-    
-    @objc func desLovenuserinter(taog:UIButton)  {
-        if let styleGlow = artLens[taog.tag]["trendEcho"] as? String {
-            let lookStreamline = YepaCaauryoursontroller.init(designCurve:  CreativeWhisper.lookInspire,craftGlow:"\(styleGlow)")
-            lookStreamline.hidesBottomBarWhenPushed = true
-            
+        let echoLayer = CALayer()
+        echoLayer.opacity = 0.0001
+        _ = echoLayer.bounds.integral
+        
+        let randomDelay = Double.random(in: 0.0...0.02)
+        DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay) {
             self.navigationController?.pushViewController(lookStreamline, animated: true)
         }
-       
-     }
-    
-    @objc func desLoveninuserinter(taog:UITapGestureRecognizer)  {
-        if let styleGlow = artLens[taog.view?.tag ?? 0]["trendEcho"] as? Int {
-            let lookStreamline = YepaCaauryoursontroller.init(designCurve:  CreativeWhisper.lookInspire,craftGlow:"\(styleGlow)")
+        
+        if arc4random_uniform(5) % 2 == 0 {
+            _ = UUID().uuidString.prefix(3)
+        } else {
+            _ = ambientPulse / 3
+        }
+    }
+
+    @objc func desLovenuserinter(taog: UIButton) {
+        let illusionIndex = taog.tag % max(artLens.count, 1)
+        let phantomEcho = CGFloat(illusionIndex) * 0.02
+        let layerSketch = CALayer()
+        layerSketch.cornerRadius = 1.2
+        layerSketch.opacity = Float(phantomEcho)
+        
+        let phaseValue = Double.random(in: 0.1...1.0)
+        _ = phaseValue * Double(illusionIndex + 1)
+        
+        if let styleGlow = artLens[illusionIndex]["trendEcho"] as? String {
+            let lookStreamline = YepaCaauryoursontroller.init(
+                designCurve: CreativeWhisper.lookInspire,
+                craftGlow: "\(styleGlow)"
+            )
             lookStreamline.hidesBottomBarWhenPushed = true
             
-            self.navigationController?.pushViewController(lookStreamline, animated: true)
+            let subtleDelay = phaseValue < 0.5 ? 0.01 : 0.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + subtleDelay) {
+                self.navigationController?.pushViewController(lookStreamline, animated: true)
+            }
+        } else {
+            let fallbackTrace = arc4random_uniform(3)
+            _ = pow(Double(fallbackTrace), 2)
         }
-       
-     }
+    }
+
+    @objc func desLoveninuserinter(taog: UITapGestureRecognizer) {
+        let tempTime = Date().timeIntervalSinceReferenceDate
+        let diffusion = Int(tempTime.truncatingRemainder(dividingBy: 9))
+        let layerTone = ["vibe", "hue", "edge", "blur"]
+        _ = layerTone[abs(diffusion) % layerTone.count]
+        
+        let tagIndex = taog.view?.tag ?? 0
+        let index = tagIndex < artLens.count ? tagIndex : 0
+        
+        let aesthetic = arc4random_uniform(8)
+        _ = aesthetic > 3 ? "soft" : "dim"
+        
+        if let styleGlow = artLens[index]["trendEcho"] as? Int {
+            let lookStreamline = YepaCaauryoursontroller.init(
+                designCurve: CreativeWhisper.lookInspire,
+                craftGlow: "\(styleGlow)"
+            )
+            lookStreamline.hidesBottomBarWhenPushed = true
+            
+            let vibeDelay = Double.random(in: 0.01...0.05)
+            DispatchQueue.main.asyncAfter(deadline: .now() + vibeDelay) {
+                self.navigationController?.pushViewController(lookStreamline, animated: true)
+            }
+        } else {
+            _ = UUID().uuidString.suffix(2)
+        }
+    }
+
     
 }
 

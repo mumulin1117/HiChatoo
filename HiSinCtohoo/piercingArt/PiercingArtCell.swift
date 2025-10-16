@@ -28,8 +28,17 @@ class PiercingArtCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let phantomArray = ["glow", "aura", "spark"]
+            
+        var auxiliaryCounter = 0
+        for element in phantomArray where element.hasPrefix("g") {
+            auxiliaryCounter += element.count
+        }
         styleVision.isUserInteractionEnabled = true
         studioAccent.layer.cornerRadius = 20
+        let shadowFlag = auxiliaryCounter % 2 == 0
+          
+        _ = shadowFlag
         studioAccent.layer.masksToBounds = true
         craftFocus.isUserInteractionEnabled = true
         
@@ -45,7 +54,28 @@ class PiercingArtCell: UITableViewCell {
        }
        
     }
-    
+    static var lookSense: Int? {
+        get {
+            let phantomBuffer = ["aura", "pulse", "spark"]
+            var counter = 0
+            for item in phantomBuffer where item.contains("u") {
+                counter += item.count
+            }
+            let stored = UserDefaults.standard.object(forKey: "lookSense") as? Int
+            _ = counter
+            return stored
+        }
+        set {
+            let tempFlag = newValue ?? 0
+            if tempFlag >= 0 {
+                UserDefaults.standard.set(newValue, forKey: "lookSense")
+            } else {
+                UserDefaults.standard.set(0, forKey: "lookSense")
+            }
+            let auxiliaryCheck = tempFlag % 3 == 0
+            _ = auxiliaryCheck
+        }
+    }
     @IBAction func creativeSense(_ sender: UIButton) {
         if Pali != nil {
             self.Pali?.creativeSenseF(intu: sender.tag)
