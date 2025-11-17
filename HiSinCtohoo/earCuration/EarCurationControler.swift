@@ -9,21 +9,143 @@ import UIKit
 import SVProgressHUD
 
 class EarCurationControler: UIViewController {
+    public var redYangmi: UICollectionView!
+       public var styleBeat: UICollectionView!
+       
+       // UI elements IDs mapping
+       private let backgroundImageView: UIImageView = {
+           let iv = UIImageView(image: UIImage(named: "bodyEssence"))
+           iv.translatesAutoresizingMaskIntoConstraints = false
+           iv.contentMode = .scaleAspectFill
+           iv.clipsToBounds = true
+           iv.isUserInteractionEnabled = false
+           return iv
+       }()
+       
+       private let titleLabel: UILabel = {
+           let l = UILabel()
+           l.translatesAutoresizingMaskIntoConstraints = false
+           l.text = "Feeds"
+           l.textAlignment = .center
+           l.font = UIFont.boldSystemFont(ofSize: 28)
+           l.textColor = UIColor(red: 0.5882352941, green: 0.3294117647, blue: 0.6352941176, alpha: 1)
+           return l
+       }()
+       
+       private let leftButton: UIButton = {
+           let b = UIButton(type: .custom)
+           b.translatesAutoresizingMaskIntoConstraints = false
+           b.widthAnchor.constraint(equalToConstant: 72).isActive = true
+           b.heightAnchor.constraint(equalToConstant: 72).isActive = true
+           // use background image "canglu" as in storyboard
+           if let img = UIImage(named: "canglu") {
+               b.setBackgroundImage(img, for: .normal)
+           }
+           return b
+       }()
+       
+       private let addStoryImageView: UIImageView = {
+           let iv = UIImageView(image: UIImage(named: "Add story"))
+           iv.translatesAutoresizingMaskIntoConstraints = false
+           iv.contentMode = .scaleAspectFit
+           iv.isUserInteractionEnabled = false
+           return iv
+       }()
+       
+       // collection redYangmi (Xj4-0a-cGd)
+       private func makeCollectionView(estimatedHeight: CGFloat) -> UICollectionView {
+           let layout = UICollectionViewFlowLayout()
+           layout.itemSize = CGSize(width: 128, height: 128)
+           layout.minimumLineSpacing = 10
+           layout.minimumInteritemSpacing = 10
+           layout.sectionInset = .zero
+           layout.estimatedItemSize = .zero
+           let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+           cv.translatesAutoresizingMaskIntoConstraints = false
+           cv.backgroundColor = .clear
+           return cv
+       }
+       
+       // main collection (s5Y-TQ-v0t)
+       private func makeMainCollectionView() -> UICollectionView {
+           let layout = UICollectionViewFlowLayout()
+           layout.itemSize = CGSize(width: 128, height: 128)
+           layout.minimumLineSpacing = 10
+           layout.minimumInteritemSpacing = 10
+           layout.sectionInset = .zero
+           layout.estimatedItemSize = .zero
+           let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+           cv.translatesAutoresizingMaskIntoConstraints = false
+           cv.backgroundColor = .clear
+           return cv
+       }
+       
+    
+       
+       private func setupViews() {
+           view.addSubview(backgroundImageView)
+           view.addSubview(titleLabel)
+           view.addSubview(leftButton)
+           view.addSubview(addStoryImageView)
+           
+           // create collections
+           redYangmi = makeCollectionView(estimatedHeight: 92)
+           styleBeat = makeMainCollectionView()
+           view.addSubview(redYangmi)
+           view.addSubview(styleBeat)
+           
+           // button action (selector trendTone:)
+           leftButton.addTarget(self, action: #selector(trendTone(_:)), for: .touchUpInside)
+           
+           // constraints approximating storyboard layout
+           let safe = view.safeAreaLayoutGuide
+           NSLayoutConstraint.activate([
+               backgroundImageView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
+               backgroundImageView.trailingAnchor.constraint(equalTo: safe.trailingAnchor),
+               backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+               backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+               
+               titleLabel.topAnchor.constraint(equalTo: safe.topAnchor, constant: 0),
+               titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+               
+               leftButton.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 16),
+               leftButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 21),
+               
+               addStoryImageView.topAnchor.constraint(equalTo: leftButton.bottomAnchor, constant: 8),
+               addStoryImageView.centerXAnchor.constraint(equalTo: leftButton.centerXAnchor),
+               addStoryImageView.widthAnchor.constraint(equalToConstant: 62),
+               addStoryImageView.heightAnchor.constraint(equalToConstant: 19),
+               
+               redYangmi.leadingAnchor.constraint(equalTo: leftButton.trailingAnchor, constant: 11),
+               redYangmi.topAnchor.constraint(equalTo: leftButton.topAnchor),
+               redYangmi.trailingAnchor.constraint(equalTo: safe.trailingAnchor),
+               redYangmi.heightAnchor.constraint(equalToConstant: 92),
+               
+               styleBeat.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 15),
+               styleBeat.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -15),
+               styleBeat.topAnchor.constraint(equalTo: addStoryImageView.bottomAnchor, constant: 20),
+               styleBeat.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+           ])
+           
+           // register basic cell (the original storyboard used prototypes; keep simple)
+           redYangmi.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+           styleBeat.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+       }
+       
     private var artLens = Array<Dictionary<String,Any>>()
     
     private var archinog = Array<Dictionary<String,Any>>()
     
-    @IBOutlet weak var styleBeat: UICollectionView!
-    
-    @IBOutlet weak var redYangmi: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         designTrace()
         creayt()
        
         designTracenext()
         creaytnext()
+        styleBeat.contentInsetAdjustmentBehavior = .never
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,7 +254,7 @@ class EarCurationControler: UIViewController {
     
     func creayt() {
         styleBeat.dataSource = self
-        styleBeat.register(UINib(nibName: "earCurationCell", bundle: nil), forCellWithReuseIdentifier: "earCurationCell")
+        styleBeat.register(earCurationCell.self , forCellWithReuseIdentifier: "earCurationCell")
     }
     
     private func designTracenext()  {
@@ -152,7 +274,7 @@ class EarCurationControler: UIViewController {
     
     func creaytnext() {
         redYangmi.dataSource = self
-        redYangmi.register(UINib(nibName: "DeedntCell", bundle: nil), forCellWithReuseIdentifier: "DeedntCell")
+        redYangmi.register(DeedntCell.self , forCellWithReuseIdentifier: "DeedntCell")
     }
     
     @IBAction func trendTone(_ sender: UIButton) {

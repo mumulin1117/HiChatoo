@@ -45,22 +45,85 @@ extension UIImageView {
         return auraCheck ? "phantomAura" : "shadowGlow"
     }
 }
+
 class MetalGlossCell: UICollectionViewCell {
 
-    @IBOutlet weak var addLeiok: UIImageView!
-    
-    
-    @IBOutlet weak var Ninme: UILabel!
-    
-    
-    @IBOutlet weak var Sevendayi: UIButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // Public interface kept (names unchanged)
+    public var addLeiok: UIImageView! = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        return iv
+    }()
+
+    public var Ninme: UILabel! = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        
+        l.font = UIFont.systemFont(ofSize: 14)
+        l.textColor = .white
+        l.numberOfLines = 1
+        return l
+    }()
+
+    public var Sevendayi: UIButton! = {
+        let b = UIButton.init()
+        b.setImage(UIImage.init(named: "sauihi"), for: .normal)
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setTitle(nil, for: .normal)
+        return b
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupViews()
+    }
+
+    private func setupViews() {
+        contentView.addSubview(addLeiok)
+        contentView.addSubview(Ninme)
+        contentView.addSubview(Sevendayi)
+
+        // Layout: image on left, label centered vertically, button at trailing top area.
+        NSLayoutConstraint.activate([
+            // addLeiok - size 48x48, leading/top padding 12
+            addLeiok.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            addLeiok.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            addLeiok.widthAnchor.constraint(equalToConstant: 48),
+            addLeiok.heightAnchor.constraint(equalToConstant: 48),
+
+            // Ninme - to the right of addLeiok, centered vertically with addLeiok
+            Ninme.centerXAnchor.constraint(equalTo: addLeiok.centerXAnchor, constant: 0),
+            Ninme.topAnchor.constraint(equalTo: addLeiok.bottomAnchor,constant: 7),
+            
+
+            // Sevendayi - trailing padding 12, top aligned to contentView top with reasonable size
+            Sevendayi.topAnchor.constraint(equalTo: Ninme.bottomAnchor,constant: 15),
+            Sevendayi.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            Sevendayi.widthAnchor.constraint(equalToConstant: 59),
+            Sevendayi.heightAnchor.constraint(equalToConstant: 29),
+
+         
+        ])
+
+        // Visual styling preserved from XIB / awakeFromNib
         self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
-        
+
         addLeiok.layer.cornerRadius = 24
         addLeiok.layer.masksToBounds = true
     }
-   
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        addLeiok.image = nil
+        Ninme.text = nil
+        Sevendayi.setTitle(nil, for: .normal)
+    }
 }

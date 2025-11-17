@@ -9,15 +9,106 @@ import UIKit
 import SVProgressHUD
 
 class BodyAdornmentControler: UIViewController {
+    public var styleBeat: UICollectionView!
+        
+        private let backgroundImageView: UIImageView = {
+            let iv = UIImageView(image: UIImage(named: "bodyEssence"))
+            iv.translatesAutoresizingMaskIntoConstraints = false
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
+            iv.isUserInteractionEnabled = false
+            return iv
+        }()
+        
+        private let headerLabel: UILabel = {
+            let l = UILabel()
+            l.translatesAutoresizingMaskIntoConstraints = false
+            l.text = "Live the Piercing Trend"
+            l.textAlignment = .center
+            l.font = UIFont.boldSystemFont(ofSize: 19)
+            l.textColor = UIColor(red: 0.5882352941, green: 0.3294117647, blue: 0.6352941176, alpha: 1)
+            return l
+        }()
+        
+        private let brandLabel: UILabel = {
+            let l = UILabel()
+            l.translatesAutoresizingMaskIntoConstraints = false
+            l.text = "HiChatoo"
+            l.textAlignment = .center
+            l.font = UIFont.boldSystemFont(ofSize: 28)
+            l.textColor = UIColor(red: 0.58823529411764708, green: 0.32941176470588235, blue: 0.63529411764705879, alpha: 1)
+            return l
+        }()
+        
+        private let actionButton: UIButton = {
+            let b = UIButton(type: .custom)
+            b.translatesAutoresizingMaskIntoConstraints = false
+            b.widthAnchor.constraint(equalToConstant: 130).isActive = true
+            b.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            if let img = UIImage(named: "aliop") {
+                b.setBackgroundImage(img, for: .normal)
+            }
+            return b
+        }()
+        
+        private func makeCollection() -> UICollectionView {
+            let layout = UICollectionViewFlowLayout()
+            layout.itemSize = CGSize(width: 128, height: 128)
+            layout.minimumLineSpacing = 10
+            layout.minimumInteritemSpacing = 10
+            layout.estimatedItemSize = .zero
+            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+            cv.translatesAutoresizingMaskIntoConstraints = false
+            cv.backgroundColor = .clear
+            return cv
+        }
+    
+    
     private var artLens = Array<Dictionary<String,Any>>()
     static var visualMood = "83214312"
     
     
-    @IBOutlet weak var styleBeat: UICollectionView!
+//    @IBOutlet weak var styleBeat: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBackground
+                styleBeat = makeCollection()
+                view.addSubview(backgroundImageView)
+                view.addSubview(brandLabel)
+                view.addSubview(headerLabel)
+                view.addSubview(styleBeat)
+                view.addSubview(actionButton)
+                
+                // action
+                actionButton.addTarget(self, action: #selector(trendTone(_:)), for: .touchUpInside)
+        let safeArea = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
+                let safe = view.safeAreaLayoutGuide
+                NSLayoutConstraint.activate([
+                    backgroundImageView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
+                    backgroundImageView.trailingAnchor.constraint(equalTo: safe.trailingAnchor),
+                    backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+                    backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                    
+                    brandLabel.topAnchor.constraint(equalTo: safe.topAnchor, constant: 0),
+                    brandLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    
+                    headerLabel.topAnchor.constraint(equalTo: brandLabel.bottomAnchor, constant: 0),
+                    headerLabel.centerXAnchor.constraint(equalTo: brandLabel.centerXAnchor),
+                    actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    actionButton.bottomAnchor.constraint(equalTo: safe.bottomAnchor, constant: -safeArea - 80 - 15),
+                    actionButton.widthAnchor.constraint(equalToConstant: 130),
+                    actionButton.heightAnchor.constraint(equalToConstant: 56),
+                    
+                    styleBeat.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 15),
+                    styleBeat.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -15),
+                    styleBeat.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 12),
+                    styleBeat.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                    
+                  
+                ])
+                
+                styleBeat.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         designTrace()
         creayt()
         SVProgressHUD.show()
@@ -73,7 +164,8 @@ class BodyAdornmentControler: UIViewController {
     
     func creayt() {
         styleBeat.dataSource = self
-        styleBeat.register(UINib(nibName: "bodyAdornmentCell", bundle: nil), forCellWithReuseIdentifier: "bodyAdornmentCell")
+        styleBeat.register(bodyAdornmentCell.self, forCellWithReuseIdentifier: "bodyAdornmentCell")
+//        styleBeat.register(UINib(nibName: "bodyAdornmentCell", bundle: nil), forCellWithReuseIdentifier: "bodyAdornmentCell")
     }
     
     @IBAction func trendTone(_ sender: UIButton) {

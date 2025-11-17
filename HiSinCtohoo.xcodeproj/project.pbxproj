@@ -219,6 +219,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HiSinCtohoo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HiChatoo;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow HiChatoo to access your camera so you can capture your unique piercing style and share your personal look moments";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow HiChatoo to use your microphone when you express your style or connect through voice with others in your creative space.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow HiChatoo to access your photos so you can upload jewelry looks, piercing inspirations, and personal style snapshots.";
@@ -257,6 +258,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HiSinCtohoo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HiChatoo;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow HiChatoo to access your camera so you can capture your unique piercing style and share your personal look moments";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow HiChatoo to use your microphone when you express your style or connect through voice with others in your creative space.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow HiChatoo to access your photos so you can upload jewelry looks, piercing inspirations, and personal style snapshots.";

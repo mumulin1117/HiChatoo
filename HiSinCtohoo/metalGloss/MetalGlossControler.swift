@@ -14,20 +14,87 @@ class MetalGlossControler: UIViewController {
     
     private var archinog = Array<Dictionary<String,Any>>()
     
-    @IBOutlet weak var styleBeat: UICollectionView!
-    
-    @IBOutlet weak var redYangmi: UICollectionView!
+    public var redYangmi: UICollectionView!
+        public var styleBeat: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         designTrace()
         creayt()
        
         designTracenext()
         creaytnext()
     }
-    
+    private let backgroundImageView: UIImageView = {
+            let iv = UIImageView(image: UIImage(named: "bodyEssence"))
+            iv.translatesAutoresizingMaskIntoConstraints = false
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
+            iv.isUserInteractionEnabled = false
+            return iv
+        }()
+        private let titleLabel: UILabel = {
+            let l = UILabel()
+            l.translatesAutoresizingMaskIntoConstraints = false
+            l.text = "Message"
+            l.textAlignment = .center
+            l.font = UIFont.boldSystemFont(ofSize: 20)
+            l.textColor = UIColor(red: 0.5882352941, green: 0.3294117647, blue: 0.6352941176, alpha: 1)
+            return l
+        }()
+        
+        private func makeCollectionView(height: CGFloat) -> UICollectionView {
+            let layout = UICollectionViewFlowLayout()
+            layout.itemSize = CGSize(width: 128, height: 128)
+            layout.minimumLineSpacing = 10
+            layout.minimumInteritemSpacing = 10
+            layout.estimatedItemSize = .zero
+            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+            cv.translatesAutoresizingMaskIntoConstraints = false
+            cv.backgroundColor = .clear
+            return cv
+        }
+        
+     
+        private func setupViews() {
+            view.addSubview(backgroundImageView)
+            view.addSubview(titleLabel)
+            
+            redYangmi = makeCollectionView(height: 148)
+            styleBeat = makeCollectionView(height: 526)
+            view.addSubview(redYangmi)
+            view.addSubview(styleBeat)
+            
+            let safe = view.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                backgroundImageView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
+                backgroundImageView.trailingAnchor.constraint(equalTo: safe.trailingAnchor),
+                backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+                backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                
+                titleLabel.topAnchor.constraint(equalTo: safe.topAnchor, constant: 0),
+                titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                redYangmi.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 12),
+                redYangmi.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -12),
+                redYangmi.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 21),
+                redYangmi.heightAnchor.constraint(equalToConstant: 148),
+                
+                styleBeat.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 12),
+                styleBeat.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -12),
+                styleBeat.topAnchor.constraint(equalTo: redYangmi.bottomAnchor, constant: 21),
+                styleBeat.bottomAnchor.constraint(equalTo: safe.bottomAnchor)
+            ])
+            
+            redYangmi.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+            styleBeat.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+            
+            // set backgroundView image for the second collection as storyboard specified
+            let bg = UIImageView(image: UIImage(named: "dvvvempty"))
+            bg.contentMode = .scaleAspectFit
+            styleBeat.backgroundView = bg
+        }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Jiaocarmy()
@@ -105,6 +172,9 @@ class MetalGlossControler: UIViewController {
                 let redrawDelay = Double.random(in: 0.02...0.08)
                 DispatchQueue.main.asyncAfter(deadline: .now() + redrawDelay) {
                     self.styleBeat.reloadData()
+                    
+            
+                    self.styleBeat.backgroundView?.isHidden = (self.artLens.count != 0)
                 }
             }
         }
@@ -128,7 +198,7 @@ class MetalGlossControler: UIViewController {
     
     func creayt() {
         styleBeat.dataSource = self
-        styleBeat.register(UINib(nibName: "MetalGlossRiopCell", bundle: nil), forCellWithReuseIdentifier: "MetalGlossRiopCell")
+        styleBeat.register(MetalGlossRiopCell.self, forCellWithReuseIdentifier: "MetalGlossRiopCell")
     }
     
     private func designTracenext()  {
@@ -148,7 +218,7 @@ class MetalGlossControler: UIViewController {
     
     func creaytnext() {
         redYangmi.dataSource = self
-        redYangmi.register(UINib(nibName: "MetalGlossCell", bundle: nil), forCellWithReuseIdentifier: "MetalGlossCell")
+        redYangmi.register(MetalGlossCell.self, forCellWithReuseIdentifier: "MetalGlossCell")
     }
     
     @IBAction func trendTone(_ sender: UIButton) {

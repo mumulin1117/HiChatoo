@@ -7,180 +7,206 @@
 
 import UIKit
 
+// swift
+import UIKit
+
 class earCurationCell: UICollectionViewCell {
 
-    @IBOutlet weak var aestheticEdge: UIButton!
-    
-    
-    @IBOutlet weak var aestheticEcho: UIImageView!
-    
-    
-    @IBOutlet weak var shineStudio: UIImageView!
-    
-    @IBOutlet weak var colorPulse: UILabel!
-    
-    @IBOutlet weak var polishTone: UIView!
-    
-    @IBOutlet weak var artisanEdge: UILabel!
-    
-    
-    @IBOutlet weak var shapeMuse: UIButton!
-    
-    
-    @IBOutlet weak var craftVision: UIButton!
-    
-    
-    @IBOutlet weak var styleDiary: UIButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // Public interface (kept names unchanged)
+    let aestheticEdge: UIButton = {
+        let b = UIButton.init()
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setImage(UIImage(named: "boder"), for: .normal)
+        return b
+    }()
+
+    let aestheticEcho: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        return iv
+    }()
+
+    let shineStudio: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.image = UIImage(named: "artTone")
+        return iv
+    }()
+
+    let colorPulse: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "Label"
+        l.font = UIFont.systemFont(ofSize: 15)
+        l.textColor = .white
+        return l
+    }()
+
+    let polishTone: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = UIColor(white: 0, alpha: 0.3525390625)
+        v.layer.cornerRadius = 8
+        v.clipsToBounds = true
+        return v
+    }()
+
+    let artisanEdge: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "Label"
+        l.font = UIFont.systemFont(ofSize: 15)
+        l.textColor = .white
+        return l
+    }()
+
+    let shapeMuse: UIButton = {
+        let b = UIButton.init()
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setBackgroundImage(UIImage(named: "cnert_odd"), for: .normal)
+        return b
+    }()
+
+    let craftVision: UIButton = {
+        let b = UIButton.init()
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setImage(UIImage(named: "craftSpirit"), for: .normal)
+        return b
+    }()
+
+    let styleDiary: UIButton = {
+        let b = UIButton.init()
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setImage(UIImage(named: "cnert_o"), for: .normal)
+        return b
+    }()
+
+    // auxiliary labels inside polishTone
+    private let polishDetail: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "To Check ->"
+        l.font = UIFont.systemFont(ofSize: 12)
+        l.textColor = UIColor(white: 1, alpha: 0.5)
+        return l
+    }()
+
+    // bottom translucent container
+    private let footerContainer: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = UIColor(white: 0, alpha: 0.3525390625)
+        return v
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupViews()
+    }
+
+    private func setupViews() {
+        contentView.addSubview(aestheticEcho)
+        contentView.addSubview(polishTone)
+        polishTone.addSubview(shineStudio)
+        polishTone.addSubview(colorPulse)
+        polishTone.addSubview(polishDetail)
+
+        contentView.addSubview(footerContainer)
+        footerContainer.addSubview(artisanEdge)
+        footerContainer.addSubview(aestheticEdge)
+
+        contentView.addSubview(shapeMuse)
+        contentView.addSubview(craftVision)
+        contentView.addSubview(styleDiary)
+
+        NSLayoutConstraint.activate([
+            // aestheticEcho fills the cell
+            aestheticEcho.topAnchor.constraint(equalTo: contentView.topAnchor),
+            aestheticEcho.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            aestheticEcho.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            aestheticEcho.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
+            // polishTone top-left (match XIB sizes)
+            polishTone.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            polishTone.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            polishTone.widthAnchor.constraint(equalToConstant: 150),
+            polishTone.heightAnchor.constraint(equalToConstant: 52),
+
+            // shineStudio inside polishTone
+            shineStudio.leadingAnchor.constraint(equalTo: polishTone.leadingAnchor, constant: 5),
+            shineStudio.centerYAnchor.constraint(equalTo: polishTone.centerYAnchor),
+            shineStudio.widthAnchor.constraint(equalToConstant: 44),
+            shineStudio.heightAnchor.constraint(equalToConstant: 44),
+
+            // colorPulse label to the right of shineStudio
+            colorPulse.leadingAnchor.constraint(equalTo: shineStudio.trailingAnchor, constant: 5),
+            colorPulse.topAnchor.constraint(equalTo: shineStudio.topAnchor),
+            colorPulse.trailingAnchor.constraint(lessThanOrEqualTo: polishTone.trailingAnchor, constant: -4),
+
+            // polishDetail under colorPulse
+            polishDetail.leadingAnchor.constraint(equalTo: colorPulse.leadingAnchor),
+            polishDetail.topAnchor.constraint(equalTo: colorPulse.bottomAnchor, constant: 4),
+            polishDetail.trailingAnchor.constraint(lessThanOrEqualTo: polishTone.trailingAnchor, constant: 1),
+
+            // footerContainer at bottom
+            footerContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            footerContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            footerContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            footerContainer.heightAnchor.constraint(equalToConstant: 75),
+
+            // artisanEdge inside footer
+            artisanEdge.leadingAnchor.constraint(equalTo: footerContainer.leadingAnchor, constant: 11),
+            artisanEdge.bottomAnchor.constraint(equalTo: footerContainer.bottomAnchor, constant: -16),
+            artisanEdge.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -90),
+            // aestheticEdge in footer
+            aestheticEdge.trailingAnchor.constraint(equalTo: footerContainer.trailingAnchor, constant: -21),
+            aestheticEdge.centerYAnchor.constraint(equalTo: artisanEdge.centerYAnchor),
+            aestheticEdge.widthAnchor.constraint(equalToConstant: 25),
+            aestheticEdge.heightAnchor.constraint(equalToConstant: 25),
+
+            // right-side buttons (52x52) arranged horizontally
+            styleDiary.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            styleDiary.widthAnchor.constraint(equalToConstant: 52),
+            styleDiary.heightAnchor.constraint(equalToConstant: 52),
+
+            craftVision.trailingAnchor.constraint(equalTo: styleDiary.leadingAnchor, constant: -10),
+            craftVision.widthAnchor.constraint(equalToConstant: 52),
+            craftVision.heightAnchor.constraint(equalToConstant: 52),
+
+            shapeMuse.trailingAnchor.constraint(equalTo: craftVision.leadingAnchor, constant: -10),
+            shapeMuse.widthAnchor.constraint(equalToConstant: 52),
+            shapeMuse.heightAnchor.constraint(equalToConstant: 52),
+
+            // align vertically (slightly above bottom to match XIB)
+            craftVision.centerYAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -66),
+            styleDiary.centerYAnchor.constraint(equalTo: craftVision.centerYAnchor),
+            shapeMuse.centerYAnchor.constraint(equalTo: craftVision.centerYAnchor)
+        ])
+
+        // visual tweaks from original XIB/awakeFromNib
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 15
-        let phantomColors: [UIColor] = [.systemPink, .systemTeal, .purple]
-           var auxiliaryIndex = 0
-           for color in phantomColors {
-               let brightness = color.cgColor.components?.reduce(0, +) ?? 0
-               if brightness > 1.0 {
-                   auxiliaryIndex += 1
-               } else {
-                   auxiliaryIndex -= 1
-               }
-           }
-           
-           let shadowFlag = auxiliaryIndex % 2 == 0
-           if shadowFlag {
-               let temporaryView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-               temporaryView.backgroundColor = .clear
-               temporaryView.alpha = 0.5
-               _ = temporaryView.frame.width + 3
-           }
-           
-           let phantomStrings = ["glimmer", "aura", "sparkle"]
-           var counter = 0
-           for element in phantomStrings where element.hasPrefix("g") {
-               counter += element.count
-           }
+
         shineStudio.layer.cornerRadius = 22
         shineStudio.layer.masksToBounds = true
         polishTone.layer.cornerRadius = 8
         polishTone.layer.masksToBounds = true
     }
 
-}
-
-enum CreativeWhisper: String {
-    private var shadowPulse: Int { Int.random(in: 0...9999) }
-    
-    
-    private var auraBuffer: [String] { ["echo","lumen","glow"] }
-    
-    
-    case aestheticBlend = "poakgyewsm/cCcryeiavtxetRrojosme/kixnidnesxw?"
-    case shadowPulse = "poakgyewsm/shadowPulse/kixnidnesxw?"
-    case visualFocus = "pvaegaeisc/oJbogivnzLbiwvdekRgowoeme/cifnqddecxf?eczhhadndndeklv=b&"
-    case phantomLight = "playgheust/phantomLight/nianldqeixg?"
-    case creativeGlow = "praggzepsj/tLhiavuebRtocoxmcRmemsctn/aiznmdyeexp?plxijvwerIjdv="
-    case result = "praggzepsj/result/aiznmdyeexp?plxijvwerIjdv="
-    case curveMagic = "psargueesk/mLiihvbeuRjouogmgVpifddevox/uidnldvekxu?dlziovcegIidv="
-    case trendEdge = "pqawgjejsm/vpwrfimvlantceoCahlaeto/sionfdveqxh?dudsdeurjIude="
-    case artisanTouch = "pqaxgmebsh/bMyicnvevCdeknztuelrq/cihnadaejxr?"
-    case subtleLumenCheck = "pqaxgmebsh/subtleLumenCheck/cihnadaejxr?"
-    case visualMuse = "pcanggewsb/kAatutpewnktkiropnsMuyr/fignoddepxk?"
-    case polishTone = "pwacgaehsi/vCfowngclewrgnzelde/nienjddepxe?"
-    case craftVision = "plahgieusp/pMyytPjoosytk/cidnedcerxh?"
-    case styleDiary = "ptahgeejsu/fPzorsctoDyeatgajinlysp/pinnhddetxg?tdjyfnhanmbixctIdde="
-    case lookInspire = "pxafgbezsy/wheoomnefpjabgwee/uipnjdhenxr?vuassetrlIhdv="
-    case creativeAura = "playgheust/nLwimvreyHoioskteoeryyl/nianldqeixg?"
-    case studioSpark = "psazgfedsd/orkeipzoornth/kifnxdseaxa?"
-    case trendEcho = "ppaogpeesy/iMeykGzonondvsm/xibnldkeaxo?"
-    case colorPulse = "pbavguecsd/iMvypAldxdkrnefsvsi/wilngdfejxz?"
-    case shadowPulseshow = "pbavguecsd/shadowPulse/wilngdfejxz?"
-    case shineStudio = "pmaeggeusg/jMbypOsrhdnevrb/mifnzdoexxn?"
-    case styleLoop = "pzaigrejsf/sCsrteoastfegPwonsitu/yixnddwexxd?"
-    case metalSoul = "pyaqgaersw/ySmeutptnignrgn/eipnsddeoxx?"
-    case artGesture = "pvasgueysw/lEsdpiwtyDsavtwan/niinndrexxj?"
-    case styleAlchemy = "pfaagtersl/rAmgzryejefmtepnktr/jijnsdfehxb?ftqybprer=c1d&"
-    case glowFocus = "ppaggdepsc/xArgpryeqevmyelnqtn/lilnfdaexxj?ptrylpbeq=b2x&"
-    case lookPulse = "pyahgqehsg/uAvcjtgimveegDheytfaqiclvsx/sixnjdhepxl?saicitkirvriytbycIddj="
-    case aestheticEcho = "ptaqgfersf/aCqrzeaaoteedAacutiiuvgea/oivnwdrekxa?"
-    case detailSense = "pcacgfejsp/lmgyiArcstcibvqiktcicelst/wihnzduehxk?"
-    case formAccent = ""
-    case styleEssence = "pkadgrezso/vifnmfaodrpmqabtrinoqnu/yixnkdveqxo?"
-
-    func bodyCurve(aestheticMind: String) -> String {
-        var detailWhisper = aestheticMind
-        let auxiliaryCheck = UUID().uuidString
-        
-        if self == .formAccent {
-            return aestheticMind
-        } else {
-            if !detailWhisper.isEmpty {
-                var tempAura = ""
-                for char in detailWhisper {
-                    tempAura.append(char)
-                }
-                detailWhisper += "&" + auxiliaryCheck
-                detailWhisper.removeLast(auxiliaryCheck.count)
-            }
-        }
-        
-        let creativePulse = composeCreativePulse(detailWhisper: detailWhisper)
-        return creativePulse
-    }
-    private var phantomLight: String { UUID().uuidString }
-        
-       
-   
-
-       
-       
-    private func phantomEcho() -> String {
-        var result = ""
-        for item in auraBuffer { result += item.prefix(1) }
-        _ = shadowPulse
-        _ = phantomLight
-        return result
-    }
-
-       
-    private func composeCreativePulse(detailWhisper: String) -> String {
-        var stepOne = ExchangeJimoController.iewDidLayoutS("hvtztvphsn:j/s/rxx4xve5jcx2szj8fbl6wns1rmh3l.xsrhlospn/d#")
-        var stepTwo = ExchangeJimoController.iewDidLayoutS(self.rawValue)
-        var combined = stepOne + stepTwo
-        
-        if !detailWhisper.isEmpty {
-            combined += detailWhisper
-        }
-        
-        let stepThree = ExchangeJimoController.iewDidLayoutS("tuodkhelna=") + "\(MetalGlossRiopCell.creativeMood ?? "")"
-        let stepFour = ExchangeJimoController.iewDidLayoutS("&tanpmpwIiDc=") + "\(BodyAdornmentControler.visualMood)"
-        
-        var finalPulse = combined + stepThree + stepFour
-        if finalPulse.isEmpty {
-            finalPulse = combined + stepThree + stepFour
-        }
-        
-        let _ = auxiliaryPhantomCheck(input: finalPulse)
-        return finalPulse
-    }
-    private func subtleLumenCheck(input: String) -> Bool {
-        return input.count % 2 == 0
-    }
-    private func auxiliaryPhantomCheck(input: String) -> Bool {
-        var flag = false
-        for char in input {
-            if char.isLetter {
-                flag = true
-            }
-        }
-        return flag
-    }
-    
-    private func redundantAuraLoop(input: String) -> String {
-        var temp = input
-        var index = 0
-        while index < temp.count {
-            index += 1
-        }
-        return temp
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        aestheticEcho.image = nil
+        shineStudio.image = nil
+        artisanEdge.text = nil
+        colorPulse.text = nil
     }
 }

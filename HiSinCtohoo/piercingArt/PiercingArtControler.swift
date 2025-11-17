@@ -76,11 +76,47 @@ class PiercingArtControler: UIViewController, PiercingArtCellDelegate {
     private var userDarat:Dictionary<String,Any> = Dictionary<String,Any>()
     
 
-    @IBOutlet weak var craftSpirit: UITableView!
+    public var craftSpirit: UITableView!
+        
+        private let backgroundImageView: UIImageView = {
+            let iv = UIImageView(image: UIImage(named: "bodyEssence"))
+            iv.translatesAutoresizingMaskIntoConstraints = false
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
+            iv.isUserInteractionEnabled = false
+            return iv
+        }()
+        
+
+        private func setup() {
+            craftSpirit = UITableView(frame: .zero, style: .plain)
+            craftSpirit.translatesAutoresizingMaskIntoConstraints = false
+            craftSpirit.backgroundColor = .systemBackground
+            craftSpirit.alwaysBounceVertical = true
+            craftSpirit.contentInsetAdjustmentBehavior = .never
+            view.addSubview(backgroundImageView)
+            view.addSubview(craftSpirit)
+            
+            let safe = view.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                backgroundImageView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
+                backgroundImageView.trailingAnchor.constraint(equalTo: safe.trailingAnchor),
+                backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+                backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                
+                craftSpirit.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
+                craftSpirit.trailingAnchor.constraint(equalTo: safe.trailingAnchor),
+                craftSpirit.topAnchor.constraint(equalTo: view.topAnchor),
+                craftSpirit.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+            
+            // basic registration
+            craftSpirit.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
         lightEssence()
         
         lookTone()
@@ -144,7 +180,7 @@ class PiercingArtControler: UIViewController, PiercingArtCellDelegate {
     }
     
     func lookTone()  {
-        craftSpirit.register(UINib(nibName: "PiercingArtCell", bundle: nil), forCellReuseIdentifier: "PiercingArtCell")
+        craftSpirit.register(PiercingArtCell.self, forCellReuseIdentifier: "PiercingArtCell")
         craftSpirit.separatorStyle = .none
     }
    
@@ -161,7 +197,7 @@ extension PiercingArtControler:UITableViewDelegate,UITableViewDataSource{
         haui.Pali = self
         haui.lookTrace.styleWeave(from: userDarat["creativeTone"] as? String)
         haui.studioAccent.styleWeave(from: userDarat["creativeTone"] as? String)
-        haui.artWhisper.text = userDarat["colorPulse"] as? String
+        haui.artWhisper.text = "User name"//userDarat["colorPulse"] as? String
         
         haui.craftFocus.text = "\(userDarat["studioTone"] as? Int ?? 0) " + ExchangeJimoController.iewDidLayoutS("Ffoclmlwoywmisnmg")
         
