@@ -34,22 +34,23 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
     private var HiSINNAMhighlightedIndex: Int?
 
     private lazy var HiSINNAMtopBanner: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .systemPurple
-        label.isHidden = true
-        return label
+        let labelHiSINNAMI = UILabel()
+        labelHiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
+        labelHiSINNAMI.textAlignment = .center
+        labelHiSINNAMI.font = UIFont.boldSystemFont(ofSize: 22)
+        labelHiSINNAMI.textColor = .systemPurple
+        labelHiSINNAMI.isHidden = true
+        return labelHiSINNAMI
     }()
 
-    private var HiSINNAMstyleFilter: [String] = ["minimal", "punk", "classic", "boho", "futuristic"]
+    private var HiSINNAMstyleFilter: [String] = ["", "", "", "", ""]
     private var HiSINNAMactiveFilter: String?
 
     private lazy var HiSINNAMfilterControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: HiSINNAMstyleFilter)
-        control.translatesAutoresizingMaskIntoConstraints = false
-        return control
+        let controlHiSINNAMI = UISegmentedControl(items: [])
+        controlHiSINNAMI.isHidden = true
+        controlHiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
+        return controlHiSINNAMI
     }()
 
     // MARK: - Lifecycle
@@ -67,7 +68,7 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
         HiSINNAMbodyImageView = UIImageView()
         HiSINNAMbodyImageView.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMbodyImageView.contentMode = .scaleAspectFill
-        HiSINNAMbodyImageView.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence")
+        HiSINNAMbodyImageView.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence")
         view.addSubview(HiSINNAMbodyImageView)
         NSLayoutConstraint.activate([
             HiSINNAMbodyImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -89,7 +90,7 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
         HiSINNAMcenterImageView = UIImageView()
         HiSINNAMcenterImageView.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMcenterImageView.contentMode = .scaleAspectFit
-        HiSINNAMcenterImageView.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIjiauong")
+        HiSINNAMcenterImageView.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIjiauong")
         view.addSubview(HiSINNAMcenterImageView)
         NSLayoutConstraint.activate([
             HiSINNAMcenterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -118,7 +119,7 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
         HiSINNAMleftIcon1 = UIImageView()
         HiSINNAMleftIcon1.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMleftIcon1.contentMode = .scaleAspectFit
-        HiSINNAMleftIcon1.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMInoaingweou")
+        HiSINNAMleftIcon1.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMInoaingweou")
         view.addSubview(HiSINNAMleftIcon1)
         NSLayoutConstraint.activate([
             HiSINNAMleftIcon1.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
@@ -148,7 +149,7 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
         HiSINNAMleftIcon2 = UIImageView()
         HiSINNAMleftIcon2.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMleftIcon2.contentMode = .scaleAspectFit
-        HiSINNAMleftIcon2.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMInoaingweouwdr")
+        HiSINNAMleftIcon2.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMInoaingweouwdr")
         view.addSubview(HiSINNAMleftIcon2)
         NSLayoutConstraint.activate([
             HiSINNAMleftIcon2.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
@@ -163,7 +164,7 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
         HiSINNAMloginButton.setTitle(HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("Lkobgx kiwn"), for: .normal)
         HiSINNAMloginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         HiSINNAMloginButton.setTitleColor(.white, for: .normal)
-        HiSINNAMloginButton.setBackgroundImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIdetailSense"), for: .normal)
+        HiSINNAMloginButton.setBackgroundImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIdetailSense"), for: .normal)
         HiSINNAMloginButton.addTarget(self, action: #selector(HiSINNAMIstyleWeave(_:)), for: .touchUpInside)
         view.addSubview(HiSINNAMloginButton)
         NSLayoutConstraint.activate([
@@ -176,8 +177,8 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
         // small toggle button (craftStory) - left bottom (3vp-a2-Olw)
         HiSINNAMcraftStory = UIButton(type: .custom)
         HiSINNAMcraftStory.translatesAutoresizingMaskIntoConstraints = false
-        HiSINNAMcraftStory.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaestheticEchoddd"), for: .normal)
-        HiSINNAMcraftStory.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaestheticEcho"), for: .selected)
+        HiSINNAMcraftStory.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaestheticEchoddd"), for: .normal)
+        HiSINNAMcraftStory.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaestheticEcho"), for: .selected)
         HiSINNAMcraftStory.addTarget(self, action: #selector(studioWhisper(_:)), for: .touchUpInside)
         view.addSubview(HiSINNAMcraftStory)
         NSLayoutConstraint.activate([
@@ -251,9 +252,11 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
        
         
     }
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     @objc func HiSINNAMIboardWillw(_ notification: Notification) {
-        HiSINNAMfilterControl.isHidden = false
+        HiSINNAMfilterControl.isHidden = true
             guard let userInfoHiSINNAMI = notification.userInfo,
                   let keyboardFrameHiSINNAMI = userInfoHiSINNAMI[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
             let keyboardHeightHiSINNAMI = keyboardFrameHiSINNAMI.height
@@ -372,7 +375,7 @@ class HiSINNAMIStyleCuratorControler: UIViewController {
 
     func conHiSINNAMIfigure(HiSINNAMIwith itemName: String, HiSINNAMIcraftAura: Dictionary<String, Any>) {
         HiSINNAMIMetalGlossRiopCell.HiSINNAMIcreativeMood = HiSINNAMIcraftAura["creativeMood"] as? String
-        HiSINNAMimageView.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: itemName)
+        HiSINNAMimageView.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: itemName)
         HiSINNAMIPiercingArtCell.HiSINNAMIlookSense = HiSINNAMIcraftAura["lookSense"] as? Int
         HiSINNAMtitleLabel.text = itemName.replacingOccurrences(of: "_", with: " ")
     }

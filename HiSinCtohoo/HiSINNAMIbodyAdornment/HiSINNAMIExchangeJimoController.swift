@@ -24,18 +24,18 @@ class HiSINNAMIExchangeJimoController: UITabBarController {
         // instantiate view controllers and set their tab bar items per storyboard mapping
         let HiSINNAMIvc1 = HiSINNAMIBodyAdornmentControler()
         
-        HiSINNAMIvc1.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlowee")?.withRenderingMode(.alwaysOriginal), selectedImage: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlowee1")?.withRenderingMode(.alwaysOriginal))
+        HiSINNAMIvc1.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlowee")?.withRenderingMode(.alwaysOriginal), selectedImage: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlowee1")?.withRenderingMode(.alwaysOriginal))
         
         let HiSINNAMIvc2 = HiSINNAMIEarCurationControler()
-        HiSINNAMIvc2.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlookEch")?.withRenderingMode(.alwaysOriginal), selectedImage: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlookEcho")?.withRenderingMode(.alwaysOriginal))
+        HiSINNAMIvc2.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlookEch")?.withRenderingMode(.alwaysOriginal), selectedImage: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlookEcho")?.withRenderingMode(.alwaysOriginal))
         
         let HiSINNAMIvc3 = HiSINNAMIMetalGlossControler()
-        HiSINNAMIvc3.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlow")?.withRenderingMode(.alwaysOriginal), selectedImage:HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAstyleGlow1")?.withRenderingMode(.alwaysOriginal))
+        HiSINNAMIvc3.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlow")?.withRenderingMode(.alwaysOriginal), selectedImage:HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAstyleGlow1")?.withRenderingMode(.alwaysOriginal))
         // Note: storyboard used styleGlow for a different controller; keep image names as close as possible.
-        HiSINNAMIvc3.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlow")?.withRenderingMode(.alwaysOriginal), selectedImage: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAstyleGlow1")?.withRenderingMode(.alwaysOriginal))
+        HiSINNAMIvc3.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleGlow")?.withRenderingMode(.alwaysOriginal), selectedImage: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAstyleGlow1")?.withRenderingMode(.alwaysOriginal))
         
         let HiSINNAMIvc4 = HiSINNAMIPiercingArtControler()
-        HiSINNAMIvc4.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIcreativeEdge")?.withRenderingMode(.alwaysOriginal), selectedImage:HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcreativeEdge1")?.withRenderingMode(.alwaysOriginal))
+        HiSINNAMIvc4.tabBarItem = UITabBarItem(title: "", image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIcreativeEdge")?.withRenderingMode(.alwaysOriginal), selectedImage:HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcreativeEdge1")?.withRenderingMode(.alwaysOriginal))
         
         // The order in storyboard: fwL-Yw-EM0 (BodyAdornment), dmY-T7-utV (EarCuration), Cef-p9-Jx1 (MetalGloss), fen-qg-rxP (PiercingArt)
         self.viewControllers = [HiSINNAMIvc1, HiSINNAMIvc2, HiSINNAMIvc3, HiSINNAMIvc4].map { UINavigationController(rootViewController: $0) }

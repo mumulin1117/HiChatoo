@@ -12,14 +12,14 @@ class HiSINNAMIAdornmentCell: UICollectionViewCell {
     let HiSINNAMIlightEssence: UIImageView = {
         let HiSINNAMIimageView = UIImageView()
         HiSINNAMIimageView.contentMode = .scaleAspectFit
-        HiSINNAMIimageView.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlightEssence")
+        HiSINNAMIimageView.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlightEssence")
         return HiSINNAMIimageView
     }()
 
     let HiSINNAMIstudioSpirit: UIButton = {
         let HiSINNAMI = UIButton.init()
       
-        HiSINNAMI.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIloiuj"), for: .normal)
+        HiSINNAMI.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIloiuj"), for: .normal)
         HiSINNAMI.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         return HiSINNAMI
     }()
@@ -48,7 +48,7 @@ class HiSINNAMIAdornmentCell: UICollectionViewCell {
 
     let HiSINNAMIaestheticEdge: UIButton = {
         let HiSINNAMIbutton = UIButton.init()
-        HiSINNAMIbutton.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIboder"), for: .normal)
+        HiSINNAMIbutton.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIboder"), for: .normal)
         return HiSINNAMIbutton
     }()
 

@@ -79,7 +79,7 @@ class HiSINNAMIPiercingArtControler: UIViewController, PiercingArtCellDelegate {
     public var craftSpiritHiSINNAMI: UITableView!
         
         private let HiSINNAMIbgImageView: UIImageView = {
-            let iv = UIImageView(image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
+            let iv = UIImageView(image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
             iv.translatesAutoresizingMaskIntoConstraints = false
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
@@ -121,18 +121,8 @@ class HiSINNAMIPiercingArtControler: UIViewController, PiercingArtCellDelegate {
         
         lookHiSINNAMITone()
         HiSINNAMIWhoCareyours.HiSINNAMItrendCurve(
-                    HiSINNAMIartMotion: {
-                let base = "/tdkcxpngtbiyytz"
-                let fragment = "/fgwzsjxsdpiszn"
-                let joiner = base + fragment
-                return String(joiner.reversed().reversed()) // 保留原路径
-            }(),
-                    HiSINNAMIcraftDetail: {
-                var shadowDetail = [String: Any]()
-                let senseKey = "shape" + "Balance"
-                shadowDetail[senseKey] = HiSINNAMIPiercingArtCell.HiSINNAMIlookSense
-                return shadowDetail
-            }(),
+                    HiSINNAMIartMotion:"/tdkcxpngtbiyytz/fgwzsjxsdpiszn",
+                    HiSINNAMIcraftDetail: ["shapeBalance":HiSINNAMIPiercingArtCell.HiSINNAMIlookSense],
                     HiSINNAMIcreativeAccent: { [unowned self] response in
                 
                 // 冗余判断 & 随机阻断点
@@ -142,22 +132,11 @@ class HiSINNAMIPiercingArtControler: UIViewController, PiercingArtCellDelegate {
                 }
                 
                 // 模糊 key 计算
-                let dynamicKey = HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("dvaktva")
-                let safeAura: Any? = {
-                    if let nested = rawMap[dynamicKey] {
-                        return nested
-                    } else {
-                        return rawMap.values.first(where: { $0 is [String: Any] })
-                    }
-                }()
+                let dynamicKey = rawMap [HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("dvaktva")] as? Dictionary<String,Any>
+                        
+                        self.HiSINNAMIuserDarat = dynamicKey ?? [:]
                 
-                // 解包与冗余安全网
-                guard let craftAura = safeAura as? [String: Any],
-                      craftAura.isEmpty == false || Bool.random() == false else {
-                    let _ = (0...2).map { _ in Int.random(in: 1...99) }.reduce(0, +)
-                    return
-                }
-                
+             
                 // 随机轻延迟刷新逻辑
                 let delay = Double.random(in: 0.03...0.12)
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
@@ -194,18 +173,18 @@ extension HiSINNAMIPiercingArtControler:UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let haui = tableView.dequeueReusableCell(withIdentifier: "HiSINNAMIPiercingArtCell", for: indexPath) as! HiSINNAMIPiercingArtCell
-        haui.Pali = self
-        haui.HiSINNAMIlookTrace.HiSINNAMIstyleWeave(from: HiSINNAMIuserDarat["creativeTone"] as? String)
-        haui.HiSINNAMIstudioAccent.HiSINNAMIstyleWeave(from: HiSINNAMIuserDarat["creativeTone"] as? String)
-        haui.HiSINNAMIartWhisper.text = "User name"//userDarat["colorPulse"] as? String
+        let SINNAMIcell = tableView.dequeueReusableCell(withIdentifier: "HiSINNAMIPiercingArtCell", for: indexPath) as! HiSINNAMIPiercingArtCell
+        SINNAMIcell.Pali = self
+        SINNAMIcell.HiSINNAMIlookTrace.HiSINNAMIstyleWeave(from: HiSINNAMIuserDarat["creativeTone"] as? String)
+        SINNAMIcell.HiSINNAMIstudioAccent.HiSINNAMIstyleWeave(from: HiSINNAMIuserDarat["creativeTone"] as? String)
+        SINNAMIcell.HiSINNAMIartWhisper.text = HiSINNAMIuserDarat["visualEcho"] as? String//"User name"//
         
-        haui.HiSINNAMIcraftFocus.text = "\(HiSINNAMIuserDarat["studioTone"] as? Int ?? 0) " + HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("Ffoclmlwoywmisnmg")
+        SINNAMIcell.HiSINNAMIcraftFocus.text = "\(HiSINNAMIuserDarat["studioTone"] as? Int ?? 0) " + HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("Ffoclmlwoywmisnmg")
         
-        haui.HiSINNAMIstyleVision.text = "\(HiSINNAMIuserDarat["formStyle"] as? Int ?? 0) " + HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("Fxaunts")
+        SINNAMIcell.HiSINNAMIstyleVision.text = "\(HiSINNAMIuserDarat["formStyle"] as? Int ?? 0) " + HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("Fxaunts")
         
         
-        return haui
+        return SINNAMIcell
         
     }
     

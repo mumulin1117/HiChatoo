@@ -14,7 +14,7 @@ class HiSINNAMIEarCurationControler: UIViewController {
        
        // UI elements IDs mapping
        private let HiSINNAMIbackgroundImageView: UIImageView = {
-           let HiSINNAMI = UIImageView(image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
+           let HiSINNAMI = UIImageView(image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
            HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
            HiSINNAMI.contentMode = .scaleAspectFill
            HiSINNAMI.clipsToBounds = true
@@ -38,14 +38,14 @@ class HiSINNAMIEarCurationControler: UIViewController {
            HiSINNAMI.widthAnchor.constraint(equalToConstant: 72).isActive = true
            HiSINNAMI.heightAnchor.constraint(equalToConstant: 72).isActive = true
            // use background image "canglu" as in storyboard
-           if let img = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcanglu") {
+           if let img = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcanglu") {
                HiSINNAMI.setBackgroundImage(img, for: .normal)
            }
            return HiSINNAMI
        }()
        
        private let HiSINNAMIaddStoryImageView: UIImageView = {
-           let HiSINNAMI = UIImageView(image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIAdd story"))
+           let HiSINNAMI = UIImageView(image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIAdd story"))
            HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
            HiSINNAMI.contentMode = .scaleAspectFit
            HiSINNAMI.isUserInteractionEnabled = false

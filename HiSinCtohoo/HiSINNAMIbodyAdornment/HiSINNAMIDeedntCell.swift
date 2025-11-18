@@ -31,7 +31,7 @@ class HiSINNAMIDeedntCell: UICollectionViewCell {
     private let HiSINNAMIartSpiritView: UIImageView = {
         let HiSINNAMI = UIImageView()
         HiSINNAMI.contentMode = .scaleAspectFit
-        HiSINNAMI.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIartSpirit")
+        HiSINNAMI.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIartSpirit")
         HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
         return HiSINNAMI
     }()

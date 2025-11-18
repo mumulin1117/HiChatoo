@@ -31,7 +31,7 @@ class HiSINNAMIYepaCaauryoursontroller:  UIViewController {
        
         
         aestheticMist.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        lightEssenceHiSINNAMI.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence")
+        lightEssenceHiSINNAMI.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence")
         lightEssenceHiSINNAMI.contentMode = .scaleAspectFill
         view.addSubview(lightEssenceHiSINNAMI)
         aestheticMist.isUserInteractionEnabled = false
@@ -133,7 +133,7 @@ class HiSINNAMIYepaCaauryoursontroller:  UIViewController {
         sparkle.velocity = 50
         sparkle.velocityRange = 20
         sparkle.scale = 0.05
-        sparkle.contents = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIsparkleParticle")?.cgImage
+        sparkle.contents = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIsparkleParticle")?.cgImage
         sparkle.alphaSpeed = -0.2
         
         ornamentShimmer?.emitterCells = [sparkle]
@@ -377,7 +377,7 @@ extension HiSINNAMIYepaCaauryoursontroller:WKScriptMessageHandler, WKNavigationD
                 return
             }
             sparkle.scale = 0.05
-            sparkle.contents = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIsparkleParticle")?.cgImage
+            sparkle.contents = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIsparkleParticle")?.cgImage
             HiSINNAMIreinterpretation(HiSINNAMIcalPhonr:styleWhisper)
             
         }

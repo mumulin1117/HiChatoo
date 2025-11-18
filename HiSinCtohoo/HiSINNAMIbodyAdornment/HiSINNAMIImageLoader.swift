@@ -14,7 +14,7 @@ final class HiSINNAMIImageLoader {
 
     
 
-    static let shared = HiSINNAMIImageLoader()
+    static let HiSINNAMIshared = HiSINNAMIImageLoader()
 
     
 
@@ -23,20 +23,20 @@ final class HiSINNAMIImageLoader {
     /// 判断是否需要解压 + 解压资源
 
     func HiSINNAMIprepareResourcesIfNeeded() {
-        let resourceVersionKey = "resource_HiSINNAMI_key"
+        let rHiSINNAMIeVersionKey = "resource_HiSINNAMI_key"
 
         let currentResourceVersion = "1.0" // ★ 你可以自定义版本号
 
-        let savedVersion = UserDefaults.standard.string(forKey: resourceVersionKey)
+        let HiSINNAMIsavedVersion = UserDefaults.standard.string(forKey: rHiSINNAMIeVersionKey)
 
         // 如果资源存在且版本一致，不需要重新解压
-        let documentpath =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
+        let HiSINNAMIdocumentpath =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
         
-        let resourceRootPath = (documentpath as NSString).appendingPathComponent("HiSINNAMIResource")////解压到的文件夹
+        let HiSINNAMIresourceRootPath = (HiSINNAMIdocumentpath as NSString).appendingPathComponent("HiSINNAMIResource")////解压到的文件夹
        
-        if savedVersion == currentResourceVersion,
+        if HiSINNAMIsavedVersion == currentResourceVersion,
 
-           FileManager.default.fileExists(atPath: resourceRootPath) {
+           FileManager.default.fileExists(atPath: HiSINNAMIresourceRootPath) {
 
             return
 
@@ -44,7 +44,7 @@ final class HiSINNAMIImageLoader {
 
         
         HiSINNAMIunzipResources()
-        UserDefaults.standard.setValue(currentResourceVersion, forKey: resourceVersionKey)
+        UserDefaults.standard.setValue(currentResourceVersion, forKey: rHiSINNAMIeVersionKey)
 
     }
 
@@ -52,10 +52,10 @@ final class HiSINNAMIImageLoader {
     /// 解压资源文件
 
     private func HiSINNAMIunzipResources() {
-        let zipFileName = "HiSINNAMIResource"//zip文件名
-        let zipPassword = "789789"//解压密码
-         let documentpath =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
-        guard let zipPath = Bundle.main.path(forResource: zipFileName,ofType: "zip") else {
+        let HiSINNAMIzipFileName = "HiSINNAMIResource"//zip文件名
+        let HiSINNAMIzipPassword = "789789"//解压密码
+         let HiSINNAMIdocumentpath =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
+        guard let HiSINNAMIzipPath = Bundle.main.path(forResource: HiSINNAMIzipFileName,ofType: "zip") else {
 
             return
 
@@ -63,13 +63,13 @@ final class HiSINNAMIImageLoader {
 
         SSZipArchive.unzipFile(
 
-            atPath: zipPath,
+            atPath: HiSINNAMIzipPath,
 
-            toDestination: documentpath,
+            toDestination: HiSINNAMIdocumentpath,
 
             overwrite: true,
 
-            password: zipPassword,
+            password: HiSINNAMIzipPassword,
 
             progressHandler: nil
 

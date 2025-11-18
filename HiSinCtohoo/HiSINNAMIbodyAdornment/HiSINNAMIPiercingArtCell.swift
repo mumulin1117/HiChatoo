@@ -95,7 +95,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         // keep placeholder background color from XIB
         HiSINNAMIstudioAccent.backgroundColor = UIColor(red: 0.5882352941, green: 0.3294117647, blue: 0.6352941176, alpha: 1)
         HiSINNAMIstudioAccent.isUserInteractionEnabled = false
-        HiSINNAMIstudioAccent.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcreativeEdge1")
+        HiSINNAMIstudioAccent.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcreativeEdge1")
         HiSINNAMIinfoContainer.addSubview(HiSINNAMIstudioAccent)
         NSLayoutConstraint.activate([
             HiSINNAMIstudioAccent.leadingAnchor.constraint(equalTo: HiSINNAMIinfoContainer.leadingAnchor, constant: 18),
@@ -162,7 +162,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIbtnLeftPrimary.tag = 45
         HiSINNAMIbtnLeftPrimary.contentHorizontalAlignment = .center
         HiSINNAMIbtnLeftPrimary.contentVerticalAlignment = .center
-        HiSINNAMIbtnLeftPrimary.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIdesignFrame"), for: .normal)
+        HiSINNAMIbtnLeftPrimary.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIdesignFrame"), for: .normal)
         HiSINNAMIbtnLeftPrimary.addTarget(self, action: #selector(HiSINNAMIcreativeSense(_:)), for: .touchUpInside)
         HiSINNAMIinfoContainer.addSubview(HiSINNAMIbtnLeftPrimary)
         NSLayoutConstraint.activate([
@@ -178,7 +178,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIbtnRightPrimary.tag = 46
         HiSINNAMIbtnRightPrimary.contentHorizontalAlignment = .center
         HiSINNAMIbtnRightPrimary.contentVerticalAlignment = .center
-        HiSINNAMIbtnRightPrimary.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlightBlend"), for: .normal)
+        HiSINNAMIbtnRightPrimary.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIlightBlend"), for: .normal)
         HiSINNAMIbtnRightPrimary.addTarget(self, action: #selector(HiSINNAMIcreativeSense(_:)), for: .touchUpInside)
         HiSINNAMIinfoContainer.addSubview(HiSINNAMIbtnRightPrimary)
         NSLayoutConstraint.activate([
@@ -194,7 +194,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIbtnBigVisual.tag = 47
         HiSINNAMIbtnBigVisual.contentHorizontalAlignment = .center
         HiSINNAMIbtnBigVisual.contentVerticalAlignment = .center
-        HiSINNAMIbtnBigVisual.setBackgroundImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIvisualEssence"), for: .normal)
+        HiSINNAMIbtnBigVisual.setBackgroundImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIvisualEssence"), for: .normal)
         HiSINNAMIbtnBigVisual.addTarget(self, action: #selector(HiSINNAMIcreativeSense(_:)), for: .touchUpInside)
         HiSINNAMIinfoContainer.addSubview(HiSINNAMIbtnBigVisual)
         NSLayoutConstraint.activate([
@@ -208,7 +208,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIbtnAesthetic = UIButton(type: .custom)
         HiSINNAMIbtnAesthetic.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMIbtnAesthetic.tag = 40
-        HiSINNAMIbtnAesthetic.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaestheticEdge"), for: .normal)
+        HiSINNAMIbtnAesthetic.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaestheticEdge"), for: .normal)
         HiSINNAMIbtnAesthetic.addTarget(self, action: #selector(HiSINNAMIcreativeSense(_:)), for: .touchUpInside)
         contentView.addSubview(HiSINNAMIbtnAesthetic)
         NSLayoutConstraint.activate([
@@ -221,7 +221,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIbtnArtTone = UIButton(type: .custom)
         HiSINNAMIbtnArtTone.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMIbtnArtTone.tag = 41
-        HiSINNAMIbtnArtTone.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIartTone"), for: .normal)
+        HiSINNAMIbtnArtTone.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIartTone"), for: .normal)
         HiSINNAMIbtnArtTone.addTarget(self, action: #selector(HiSINNAMIcreativeSense(_:)), for: .touchUpInside)
         contentView.addSubview(HiSINNAMIbtnArtTone)
         NSLayoutConstraint.activate([
@@ -234,7 +234,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIbtnStudioSpirit = UIButton(type: .custom)
         HiSINNAMIbtnStudioSpirit.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMIbtnStudioSpirit.tag = 42
-        HiSINNAMIbtnStudioSpirit.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstudioSpirit"), for: .normal)
+        HiSINNAMIbtnStudioSpirit.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstudioSpirit"), for: .normal)
         HiSINNAMIbtnStudioSpirit.addTarget(self, action: #selector(HiSINNAMIcreativeSense(_:)), for: .touchUpInside)
         contentView.addSubview(HiSINNAMIbtnStudioSpirit)
         NSLayoutConstraint.activate([
@@ -248,7 +248,7 @@ class HiSINNAMIPiercingArtCell: UITableViewCell {
         HiSINNAMIstyleFocusImageView = UIImageView()
         HiSINNAMIstyleFocusImageView.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMIstyleFocusImageView.contentMode = .scaleAspectFit
-        HiSINNAMIstyleFocusImageView.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleFocus")
+        HiSINNAMIstyleFocusImageView.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIstyleFocus")
         contentView.addSubview(HiSINNAMIstyleFocusImageView)
         NSLayoutConstraint.activate([
             HiSINNAMIstyleFocusImageView.widthAnchor.constraint(equalToConstant: 178),

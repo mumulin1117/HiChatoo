@@ -12,7 +12,7 @@ class HiSINNAMIBodyAdornmentControler: UIViewController {
     public var styleBeat: UICollectionView!
         
         private let HiSINNAMIbgImageView: UIImageView = {
-            let ivHiSINNAMI = UIImageView(image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
+            let ivHiSINNAMI = UIImageView(image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
             ivHiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
             ivHiSINNAMI.contentMode = .scaleAspectFill
             ivHiSINNAMI.clipsToBounds = true
@@ -45,7 +45,7 @@ class HiSINNAMIBodyAdornmentControler: UIViewController {
             HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
             HiSINNAMI.widthAnchor.constraint(equalToConstant: 130).isActive = true
             HiSINNAMI.heightAnchor.constraint(equalToConstant: 56).isActive = true
-            if let img = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaliop") {
+            if let img = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIaliop") {
                 HiSINNAMI.setBackgroundImage(img, for: .normal)
             }
             return HiSINNAMI

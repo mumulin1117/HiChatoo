@@ -27,7 +27,7 @@ class HiSINNAMIMetalGlossControler: UIViewController {
         HiSINNAMIcreaytnext()
     }
     private let HiSINNAMIbgImageView: UIImageView = {
-        let iv = UIImageView(image:HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
+        let iv = UIImageView(image:HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIbodyEssence"))
             iv.translatesAutoresizingMaskIntoConstraints = false
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
@@ -91,7 +91,7 @@ class HiSINNAMIMetalGlossControler: UIViewController {
             HiSINNAMIstyleBeat.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
             
             // set backgroundView image for the second collection as storyboard specified
-            let bg = UIImageView(image: HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIdvvvempty"))
+            let bg = UIImageView(image: HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIdvvvempty"))
             bg.contentMode = .scaleAspectFit
             HiSINNAMIstyleBeat.backgroundView = bg
         }

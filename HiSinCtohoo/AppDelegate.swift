@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        HiSINNAMIImageLoader.shared.HiSINNAMIprepareResourcesIfNeeded()
+        HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIprepareResourcesIfNeeded()
         let HiSINNAMIdesignTrace = UIScreen.main.bounds
         let phantomArray = ["aura", "pulse", "glow"]
                 

@@ -16,7 +16,7 @@ class HiSINNAMIearCurationCell: UICollectionViewCell {
     let HiSINNAMIaestheticEdge: UIButton = {
         let HiSINNAMI = UIButton.init()
         HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
-        HiSINNAMI.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIboder"), for: .normal)
+        HiSINNAMI.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIboder"), for: .normal)
         return HiSINNAMI
     }()
 
@@ -33,7 +33,7 @@ class HiSINNAMIearCurationCell: UICollectionViewCell {
         HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
         HiSINNAMI.contentMode = .scaleAspectFill
         HiSINNAMI.clipsToBounds = true
-        HiSINNAMI.image = HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIartTone")
+        HiSINNAMI.image = HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIartTone")
         return HiSINNAMI
     }()
 
@@ -67,21 +67,21 @@ class HiSINNAMIearCurationCell: UICollectionViewCell {
     let HiSINNAMIshapeMuse: UIButton = {
         let HiSINNAMI = UIButton.init()
         HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
-        HiSINNAMI.setBackgroundImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcnert_odd"), for: .normal)
+        HiSINNAMI.setBackgroundImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed: "HiSINNAMIcnert_odd"), for: .normal)
         return HiSINNAMI
     }()
 
     let HiSINNAMIcraftVision: UIButton = {
         let b = UIButton.init()
         b.translatesAutoresizingMaskIntoConstraints = false
-        b.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIcraftSpirit"), for: .normal)
+        b.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIcraftSpirit"), for: .normal)
         return b
     }()
 
     let HiSINNAMIstyleDiary: UIButton = {
         let HiSINNAMI = UIButton.init()
         HiSINNAMI.translatesAutoresizingMaskIntoConstraints = false
-        HiSINNAMI.setImage(HiSINNAMIImageLoader.shared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIcnert_o"), for: .normal)
+        HiSINNAMI.setImage(HiSINNAMIImageLoader.HiSINNAMIshared.HiSINNAMIimage(HiSINNAMInamed:"HiSINNAMIcnert_o"), for: .normal)
         return HiSINNAMI
     }()
 
