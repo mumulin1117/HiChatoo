@@ -6,7 +6,7 @@ target 'HiSinCtohoo' do
   use_frameworks!
 
   # Pods for HiSinCtohoo
-pod 'IQKeyboardManager'
+
 pod 'SwiftyStoreKit'
-pod 'SVProgressHUD'
+pod 'SSZipArchive'
 end

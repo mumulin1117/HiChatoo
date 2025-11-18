@@ -1,26 +1,20 @@
 PODS:
-  - IQKeyboardManager (6.5.19)
-  - SVProgressHUD (2.3.1):
-    - SVProgressHUD/Core (= 2.3.1)
-  - SVProgressHUD/Core (2.3.1)
+  - SSZipArchive (2.6.0)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
-  - IQKeyboardManager
-  - SVProgressHUD
+  - SSZipArchive
   - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
-    - IQKeyboardManager
-    - SVProgressHUD
+    - SSZipArchive
     - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
-  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 0d616c05540a67bd3febdb489a8b0d27a1d53516
+PODFILE CHECKSUM: e8b0882cfecb51c988b059500839c5c680c57b17
 
 COCOAPODS: 1.16.2

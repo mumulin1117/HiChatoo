@@ -11,14 +11,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let designTrace = UIScreen.main.bounds
+        HiSINNAMIImageLoader.shared.HiSINNAMIprepareResourcesIfNeeded()
+        let HiSINNAMIdesignTrace = UIScreen.main.bounds
         let phantomArray = ["aura", "pulse", "glow"]
                 
         var auxiliaryCounter = 0
         for element in phantomArray where element.hasPrefix("g") {
             auxiliaryCounter += element.count
         }
-        window = UIWindow(frame: designTrace)
+        SwiftyStoreKit.completeTransactions(atomically: true) { _ in
+            
+        }
+        window = UIWindow(frame: HiSINNAMIdesignTrace)
         window?.rootViewController =   HiSINNAMIMiniManicontrolle()
        
         _ = auxiliaryCounter % 2 == 0
@@ -32,51 +36,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
 }
-enum CreativeWhisper: String {
-    private var shadowPulse: Int { Int.random(in: 0...9999) }
+enum HiSINNAMICreativeWhisper: String {
+    private var HiSINNAMIshadowPulse: Int { Int.random(in: 0...9999) }
     
     
-    private var auraBuffer: [String] { ["echo","lumen","glow"] }
+    private var HiSINNAMIauraBuffer: [String] { ["echo","lumen","glow"] }
     
     
-    case aestheticBlend = "poakgyewsm/cCcryeiavtxetRrojosme/kixnidnesxw?"
-    case shadowPulse = "poakgyewsm/shadowPulse/kixnidnesxw?"
-    case visualFocus = "pvaegaeisc/oJbogivnzLbiwvdekRgowoeme/cifnqddecxf?eczhhadndndeklv=b&"
-    case phantomLight = "playgheust/phantomLight/nianldqeixg?"
-    case creativeGlow = "praggzepsj/tLhiavuebRtocoxmcRmemsctn/aiznmdyeexp?plxijvwerIjdv="
-    case result = "praggzepsj/result/aiznmdyeexp?plxijvwerIjdv="
-    case curveMagic = "psargueesk/mLiihvbeuRjouogmgVpifddevox/uidnldvekxu?dlziovcegIidv="
-    case trendEdge = "pqawgjejsm/vpwrfimvlantceoCahlaeto/sionfdveqxh?dudsdeurjIude="
-    case artisanTouch = "pqaxgmebsh/bMyicnvevCdeknztuelrq/cihnadaejxr?"
-    case subtleLumenCheck = "pqaxgmebsh/subtleLumenCheck/cihnadaejxr?"
-    case visualMuse = "pcanggewsb/kAatutpewnktkiropnsMuyr/fignoddepxk?"
-    case polishTone = "pwacgaehsi/vCfowngclewrgnzelde/nienjddepxe?"
-    case craftVision = "plahgieusp/pMyytPjoosytk/cidnedcerxh?"
-    case styleDiary = "ptahgeejsu/fPzorsctoDyeatgajinlysp/pinnhddetxg?tdjyfnhanmbixctIdde="
-    case lookInspire = "pxafgbezsy/wheoomnefpjabgwee/uipnjdhenxr?vuassetrlIhdv="
-    case creativeAura = "playgheust/nLwimvreyHoioskteoeryyl/nianldqeixg?"
-    case studioSpark = "psazgfedsd/orkeipzoornth/kifnxdseaxa?"
-    case trendEcho = "ppaogpeesy/iMeykGzonondvsm/xibnldkeaxo?"
-    case colorPulse = "pbavguecsd/iMvypAldxdkrnefsvsi/wilngdfejxz?"
-    case shadowPulseshow = "pbavguecsd/shadowPulse/wilngdfejxz?"
-    case shineStudio = "pmaeggeusg/jMbypOsrhdnevrb/mifnzdoexxn?"
-    case styleLoop = "pzaigrejsf/sCsrteoastfegPwonsitu/yixnddwexxd?"
-    case metalSoul = "pyaqgaersw/ySmeutptnignrgn/eipnsddeoxx?"
-    case artGesture = "pvasgueysw/lEsdpiwtyDsavtwan/niinndrexxj?"
-    case styleAlchemy = "pfaagtersl/rAmgzryejefmtepnktr/jijnsdfehxb?ftqybprer=c1d&"
-    case glowFocus = "ppaggdepsc/xArgpryeqevmyelnqtn/lilnfdaexxj?ptrylpbeq=b2x&"
-    case lookPulse = "pyahgqehsg/uAvcjtgimveegDheytfaqiclvsx/sixnjdhepxl?saicitkirvriytbycIddj="
-    case aestheticEcho = "ptaqgfersf/aCqrzeaaoteedAacutiiuvgea/oivnwdrekxa?"
-    case detailSense = "pcacgfejsp/lmgyiArcstcibvqiktcicelst/wihnzduehxk?"
-    case formAccent = ""
-    case styleEssence = "pkadgrezso/vifnmfaodrpmqabtrinoqnu/yixnkdveqxo?"
+    case HiSINNAMIaestheticBlend = "poakgyewsm/cCcryeiavtxetRrojosme/kixnidnesxw?"
+    case HiSINNAMIshadowPulse = "poakgyewsm/shadowPulse/kixnidnesxw?"
+    case HiSINNAMIvisualFocus = "pvaegaeisc/oJbogivnzLbiwvdekRgowoeme/cifnqddecxf?eczhhadndndeklv=b&"
+    case HiSINNAMIphantomLight = "playgheust/phantomLight/nianldqeixg?"
+    case HiSINNAMIcreativeGlow = "praggzepsj/tLhiavuebRtocoxmcRmemsctn/aiznmdyeexp?plxijvwerIjdv="
+    case HiSINNAMIresult = "praggzepsj/result/aiznmdyeexp?plxijvwerIjdv="
+    case HiSINNAMIcurveMagic = "psargueesk/mLiihvbeuRjouogmgVpifddevox/uidnldvekxu?dlziovcegIidv="
+    case HiSINNAMItrendEdge = "pqawgjejsm/vpwrfimvlantceoCahlaeto/sionfdveqxh?dudsdeurjIude="
+    case HiSINNAMIartisanTouch = "pqaxgmebsh/bMyicnvevCdeknztuelrq/cihnadaejxr?"
+    case HiSINNAMIsubtleLumenCheck = "pqaxgmebsh/subtleLumenCheck/cihnadaejxr?"
+    case HiSINNAMIvisualMuse = "pcanggewsb/kAatutpewnktkiropnsMuyr/fignoddepxk?"
+    case HiSINNAMIpolishTone = "pwacgaehsi/vCfowngclewrgnzelde/nienjddepxe?"
+    case HiSINNAMIcraftVision = "plahgieusp/pMyytPjoosytk/cidnedcerxh?"
+    case HiSINNAMIstyleDiary = "ptahgeejsu/fPzorsctoDyeatgajinlysp/pinnhddetxg?tdjyfnhanmbixctIdde="
+    case HiSINNAMIlookInspire = "pxafgbezsy/wheoomnefpjabgwee/uipnjdhenxr?vuassetrlIhdv="
+    case HiSINNAMIcreativeAura = "playgheust/nLwimvreyHoioskteoeryyl/nianldqeixg?"
+    case HiSINNAMIstudioSpark = "psazgfedsd/orkeipzoornth/kifnxdseaxa?"
+    case HiSINNAMItrendEcho = "ppaogpeesy/iMeykGzonondvsm/xibnldkeaxo?"
+    case HiSINNAMIcolorPulse = "pbavguecsd/iMvypAldxdkrnefsvsi/wilngdfejxz?"
+    case HiSINNAMIshadowPulseshow = "pbavguecsd/shadowPulse/wilngdfejxz?"
+    case HiSINNAMIshineStudio = "pmaeggeusg/jMbypOsrhdnevrb/mifnzdoexxn?"
+    case HiSINNAMIstyleLoop = "pzaigrejsf/sCsrteoastfegPwonsitu/yixnddwexxd?"
+    case HiSINNAMImetalSoul = "pyaqgaersw/ySmeutptnignrgn/eipnsddeoxx?"
+    case HiSINNAMIartGesture = "pvasgueysw/lEsdpiwtyDsavtwan/niinndrexxj?"
+    case HiSINNAMIstyleAlchemy = "pfaagtersl/rAmgzryejefmtepnktr/jijnsdfehxb?ftqybprer=c1d&"
+    case HiSINNAMIglowFocus = "ppaggdepsc/xArgpryeqevmyelnqtn/lilnfdaexxj?ptrylpbeq=b2x&"
+    case HiSINNAMIlookPulse = "pyahgqehsg/uAvcjtgimveegDheytfaqiclvsx/sixnjdhepxl?saicitkirvriytbycIddj="
+    case HiSINNAMIaestheticEcho = "ptaqgfersf/aCqrzeaaoteedAacutiiuvgea/oivnwdrekxa?"
+    case HiSINNAMIdetailSense = "pcacgfejsp/lmgyiArcstcibvqiktcicelst/wihnzduehxk?"
+    case HiSINNAMIformAccent = ""
+    case HiSINNAMIstyleEssence = "pkadgrezso/vifnmfaodrpmqabtrinoqnu/yixnkdveqxo?"
 
-    func bodyCurve(aestheticMind: String) -> String {
-        var detailWhisper = aestheticMind
+    func HiSINNAMIbodyCurve(HiSINNAMIaestheticMind: String) -> String {
+        var detailWhisper = HiSINNAMIaestheticMind
         let auxiliaryCheck = UUID().uuidString
         
-        if self == .formAccent {
-            return aestheticMind
+        if self == .HiSINNAMIformAccent {
+            return HiSINNAMIaestheticMind
         } else {
             if !detailWhisper.isEmpty {
                 var tempAura = ""
@@ -88,36 +92,36 @@ enum CreativeWhisper: String {
             }
         }
         
-        let creativePulse = composeCreativePulse(detailWhisper: detailWhisper)
+        let creativePulse = composeCreativePulseHiSINNAMI(detailWhisper: detailWhisper)
         return creativePulse
     }
-    private var phantomLight: String { UUID().uuidString }
+    private var HiSINNAMIphantomLight: String { UUID().uuidString }
         
        
    
 
        
        
-    private func phantomEcho() -> String {
+    private func HiSINNAMIphantomEcho() -> String {
         var result = ""
-        for item in auraBuffer { result += item.prefix(1) }
-        _ = shadowPulse
-        _ = phantomLight
+        for item in HiSINNAMIauraBuffer { result += item.prefix(1) }
+        _ = HiSINNAMIshadowPulse
+        _ = HiSINNAMIphantomLight
         return result
     }
 
        
-    private func composeCreativePulse(detailWhisper: String) -> String {
-        var stepOne = ExchangeJimoController.iewDidLayoutS("hvtztvphsn:j/s/rxx4xve5jcx2szj8fbl6wns1rmh3l.xsrhlospn/d#")
-        var stepTwo = ExchangeJimoController.iewDidLayoutS(self.rawValue)
+    private func composeCreativePulseHiSINNAMI(detailWhisper: String) -> String {
+        var stepOne = HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("hvtztvphsn:j/s/rxx4xve5jcx2szj8fbl6wns1rmh3l.xsrhlospn/d#")
+        var stepTwo = HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS(self.rawValue)
         var combined = stepOne + stepTwo
         
         if !detailWhisper.isEmpty {
             combined += detailWhisper
         }
         
-        let stepThree = ExchangeJimoController.iewDidLayoutS("tuodkhelna=") + "\(MetalGlossRiopCell.creativeMood ?? "")"
-        let stepFour = ExchangeJimoController.iewDidLayoutS("&tanpmpwIiDc=") + "\(BodyAdornmentControler.visualMood)"
+        let stepThree = HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("tuodkhelna=") + "\(HiSINNAMIMetalGlossRiopCell.HiSINNAMIcreativeMood ?? "")"
+        let stepFour = HiSINNAMIExchangeJimoController.HiSINNAMIiewDidLayoutS("&tanpmpwIiDc=") + "\(HiSINNAMIBodyAdornmentControler.HiSINNAMIvisualMood)"
         
         var finalPulse = combined + stepThree + stepFour
         if finalPulse.isEmpty {
